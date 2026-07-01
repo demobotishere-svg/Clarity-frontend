@@ -150,6 +150,18 @@ export default async function AdminDashboard({
     value: row.value as number
   })).filter(s => s.value > 0);
 
+  // Group payment statuses directly in SQL
+  const rawPayments = await db.execute(sql`
+    SELECT "hasPaid", cast(count(id) as int) as value 
+    FROM "Lead" 
+    GROUP BY "hasPaid"
+  `);
+
+  const paymentStatuses = rawPayments.rows.map(row => ({
+    name: row.hasPaid ? "PAID" : "UNPAID",
+    value: row.value as number
+  }));
+
   return (
     <div className="max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold text-slate-900 mb-6">Admin Dashboard</h1>
@@ -169,6 +181,7 @@ export default async function AdminDashboard({
           metrics={metrics}
           leadsByDate={leadsByDate}
           assessmentStatuses={assessmentStatuses}
+          paymentStatuses={paymentStatuses}
         />
       )}
 

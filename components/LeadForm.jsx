@@ -34,10 +34,22 @@ export default function LeadForm({
       toast.error("Please share your name and WhatsApp number");
       return;
     }
+    
+    if (name.trim().length < 2 || name.trim().length > 50) {
+      toast.error("Please enter a valid name (2-50 characters)");
+      return;
+    }
+    
+    const formattedPhone = whatsapp.replace(/[^0-9]/g, "");
+    if (formattedPhone.length < 10 || formattedPhone.length > 15) {
+      toast.error("Please enter a valid 10-digit phone number");
+      return;
+    }
+
     setSubmitting(true);
     
     try {
-      const res = await fetch("http://localhost:3001/api/leads", {
+      const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, phone: whatsapp }),

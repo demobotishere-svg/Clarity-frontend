@@ -23,11 +23,12 @@ interface DataVisualizationProps {
   };
   leadsByDate: { date: string; count: number }[];
   assessmentStatuses: { name: string; value: number }[];
+  paymentStatuses: { name: string; value: number }[];
 }
 
 const COLORS = ["#10b981", "#3b82f6", "#f59e0b", "#ef4444", "#6b7280"];
 
-export default function DataVisualization({ metrics, leadsByDate, assessmentStatuses }: DataVisualizationProps) {
+export default function DataVisualization({ metrics, leadsByDate, assessmentStatuses, paymentStatuses }: DataVisualizationProps) {
   return (
     <div className="space-y-6 mb-10">
       {/* Top Metrics Cards */}
@@ -66,7 +67,7 @@ export default function DataVisualization({ metrics, leadsByDate, assessmentStat
       </div>
 
       {/* Charts Row */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
           <h3 className="text-lg font-bold text-slate-900 mb-6">Leads Acquired Over Time</h3>
           <div className="h-72">
@@ -98,6 +99,30 @@ export default function DataVisualization({ metrics, leadsByDate, assessmentStat
                 >
                   {assessmentStatuses.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
+                <Legend verticalAlign="bottom" height={36} iconType="circle" />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+          <h3 className="text-lg font-bold text-slate-900 mb-6">Payment Status</h3>
+          <div className="h-72">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={paymentStatuses}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={100}
+                  paddingAngle={5}
+                  dataKey="value"
+                >
+                  {paymentStatuses.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.name === 'PAID' ? '#10b981' : '#f59e0b'} />
                   ))}
                 </Pie>
                 <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
