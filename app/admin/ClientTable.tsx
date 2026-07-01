@@ -89,9 +89,9 @@ export default function ClientTable({ leads, totalPages, currentPage, totalCount
       if (activeTab === 'lifecycle') {
         templateName = `utl_clarity_${lifecycle.toLowerCase().replace('_', '')}`;
       } else if (activeTab === 'payment_abandoned') {
-        templateName = "utl_clarity_payment_abandoned"; // Update this in Meta later
+        templateName = "utl_payment_abandoned";
       } else if (activeTab === 'assessment_abandoned') {
-        templateName = "utl_clarity_assessment_abandoned"; // Update this in Meta later
+        templateName = "utl_assessment_abandoned";
       }
 
       const res = await fetch("/api/bulk/queue", {
