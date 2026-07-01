@@ -85,7 +85,15 @@ export default function ClientTable({ leads, totalPages, currentPage, totalCount
     if (leads.length === 0) return;
     setIsQueuing(true);
     try {
-      const templateName = `utl_clarity_${lifecycle.toLowerCase().replace('_', '')}`;
+      let templateName = "";
+      if (activeTab === 'lifecycle') {
+        templateName = `utl_clarity_${lifecycle.toLowerCase().replace('_', '')}`;
+      } else if (activeTab === 'payment_abandoned') {
+        templateName = "utl_clarity_payment_abandoned"; // Update this in Meta later
+      } else if (activeTab === 'assessment_abandoned') {
+        templateName = "utl_clarity_assessment_abandoned"; // Update this in Meta later
+      }
+
       const res = await fetch("/api/bulk/queue", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -212,7 +220,8 @@ export default function ClientTable({ leads, totalPages, currentPage, totalCount
             <div className="w-full sm:w-auto flex justify-center">
               <ExportButton data={leads} filename="leads_export" className="w-full" />
             </div>
-            {activeTab === 'lifecycle' && lifecycle !== 'ALL' && lifecycle !== 'EXPIRED' && leads.length > 0 && (
+            
+            {((activeTab === 'lifecycle' && lifecycle !== 'ALL' && lifecycle !== 'EXPIRED') || activeTab === 'payment_abandoned' || activeTab === 'assessment_abandoned') && leads.length > 0 && (
               <button 
                 onClick={() => setShowBulkModal(true)}
                 className="w-full sm:w-auto px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg shadow-sm transition-colors flex justify-center"
@@ -352,7 +361,7 @@ export default function ClientTable({ leads, totalPages, currentPage, totalCount
           <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6">
             <h3 className="text-xl font-bold text-slate-900 mb-2">Confirm Bulk Send</h3>
             <p className="text-slate-600 mb-6">
-              You are about to queue the <strong>{lifecycle.replace("_", " ")}</strong> template for <strong>{leads.length}</strong> user(s). 
+              You are about to queue a bulk message for <strong>{leads.length}</strong> user(s) in this cohort. 
               The system will safely process 1 message per second in the background.
             </p>
             <div className="flex gap-3 justify-end">

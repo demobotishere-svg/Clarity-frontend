@@ -63,6 +63,17 @@ export default async function AdminDashboard({
     conditions.push(eq(assessments.status, "COMPLETED"));
   }
 
+  if (tab === 'payment_abandoned') {
+    // Completed assessment but hasn't paid
+    conditions.push(eq(assessments.status, "COMPLETED"));
+    conditions.push(eq(leads.hasPaid, false));
+  }
+
+  if (tab === 'assessment_abandoned') {
+    // Has not completed the assessment
+    conditions.push(sql`${assessments.status} != 'COMPLETED' OR ${assessments.status} IS NULL`);
+  }
+
   if (lifecycle !== "ALL" && tab === 'lifecycle') {
     if (lifecycle === "WEEK_1") {
       conditions.push(sql`EXTRACT(DAY FROM CURRENT_TIMESTAMP - ${leads.createdAt}) <= 7`);
@@ -167,12 +178,18 @@ export default async function AdminDashboard({
       <h1 className="text-3xl font-bold text-slate-900 mb-6">Admin Dashboard</h1>
       
       {/* Tabs Navigation */}
-      <div className="flex space-x-6 mb-8 border-b border-slate-200">
-        <a href="?tab=overview" className={`pb-3 px-1 text-sm font-medium border-b-2 transition-colors ${tab === 'overview' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
+      <div className="flex space-x-6 mb-8 border-b border-slate-200 overflow-x-auto">
+        <a href="?tab=overview" className={`pb-3 px-1 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${tab === 'overview' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
           Overview & Payments
         </a>
-        <a href="?tab=lifecycle" className={`pb-3 px-1 text-sm font-medium border-b-2 transition-colors ${tab === 'lifecycle' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
+        <a href="?tab=lifecycle" className={`pb-3 px-1 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${tab === 'lifecycle' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
           Lifecycle Cohorts
+        </a>
+        <a href="?tab=payment_abandoned" className={`pb-3 px-1 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${tab === 'payment_abandoned' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
+          Payment Abandoned
+        </a>
+        <a href="?tab=assessment_abandoned" className={`pb-3 px-1 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${tab === 'assessment_abandoned' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
+          Assessment Abandoned
         </a>
       </div>
 
