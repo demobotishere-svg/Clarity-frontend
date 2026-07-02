@@ -101,7 +101,7 @@ export default function LeadForm({
               </div>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight">
                 {title}{" "}
-                <span className={isDark ? "italic text-white/80" : "italic text-[#666666]"}>
+                <span className={isDark ? "italic text-[#F4A261]" : "italic text-[#E76F51]"}>
                   {titleHighlight}
                 </span>
               </h2>
@@ -138,7 +138,7 @@ export default function LeadForm({
               </div>
               <h2 className="mt-3 font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight">
                 {title}{" "}
-                <span className={isDark ? "italic text-[#FAF8F3]/60" : "italic text-[#666666]"}>
+                <span className={isDark ? "italic text-[#F4A261]" : "italic text-[#E76F51]"}>
                   {titleHighlight}
                 </span>
               </h2>
