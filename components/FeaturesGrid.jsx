@@ -57,7 +57,7 @@ export default function FeaturesGrid() {
               transition={{ duration: 0.6 }}
               className="py-10 md:py-16 border-b border-[#1A1916]/10 flex flex-col md:flex-row gap-6 md:gap-16 items-start group cursor-default"
             >
-              <div className="text-xl md:text-2xl font-mono text-[#1A1916]/30 font-semibold group-hover:text-[#15604E] transition-colors">
+              <div className="text-xl md:text-2xl font-mono text-[#1A1916]/30 font-semibold group-hover:text-[#E76F51] transition-colors">
                 {feature.num}
               </div>
               <div className="flex-1">

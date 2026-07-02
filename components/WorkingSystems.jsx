@@ -28,7 +28,7 @@ export default function WorkingSystems() {
             className="font-serif text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight text-[#1A1916] mb-6"
           >
             Real, working systems —<br />
-            built by <span className="italic text-[#15604E]">you</span>, live in class.
+            built by <span className="italic text-[#E76F51]">you</span>, live in class.
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ export default function WorkingSystems() {
         >
           {/* Card 1: Pipeline */}
           <motion.div variants={itemVariants} className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-[#EAEAE6] flex flex-col">
-            <div className="h-56 lg:h-64 bg-[#15604E] relative flex items-center justify-center p-6 overflow-hidden">
+            <div className="h-56 lg:h-64 bg-[#E76F51] relative flex items-center justify-center p-6 overflow-hidden">
               <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/20 -translate-y-1/2" />
               <div className="absolute top-1/2 left-1/4 w-1/2 h-[1px] bg-[#F4A261] shadow-[0_0_10px_#F4A261] -translate-y-1/2 z-0" />
               
@@ -99,7 +99,7 @@ export default function WorkingSystems() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                className="bg-[#15604E] text-white text-xs px-4 py-3 rounded-2xl rounded-tr-sm w-fit shadow-sm self-end max-w-[85%]"
+                className="bg-[#E76F51] text-white text-xs px-4 py-3 rounded-2xl rounded-tr-sm w-fit shadow-sm self-end max-w-[85%]"
               >
                 What&apos;s your refund policy?
               </motion.div>
@@ -137,7 +137,7 @@ export default function WorkingSystems() {
 
           {/* Card 3: Media Engine */}
           <motion.div variants={itemVariants} className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-[#EAEAE6] flex flex-col">
-            <div className="h-56 lg:h-64 bg-[#15604E] relative p-6 flex items-center justify-center">
+            <div className="h-56 lg:h-64 bg-[#E76F51] relative p-6 flex items-center justify-center">
               <div className="grid grid-cols-2 gap-3 w-full max-w-[240px]">
                 <div className="bg-[#1B7560]/40 border border-white/5 rounded-xl aspect-[4/3] flex items-center justify-center shadow-inner relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

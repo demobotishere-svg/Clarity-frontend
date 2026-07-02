@@ -40,32 +40,32 @@ export default function TimeAuditWidget() {
               <div className="flex flex-col gap-3">
                 {/* Before AI Bar */}
                 <div className="flex items-center gap-3">
-                  <div className="w-[65px] text-sm md:text-base font-extrabold font-mono tracking-wider uppercase text-[#15604E]">Before</div>
+                  <div className="w-[65px] text-sm md:text-base font-extrabold font-mono tracking-wider uppercase text-[#E76F51]">Before</div>
                   <div className="flex-1 h-1.5 rounded-full bg-[#EAEAE6]">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${manualPct}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: i * 0.1, ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-[#15604E] to-[#ff4d5a] rounded-full shadow-[0_0_10px_rgba(230,57,70,0.4)]"
+                      className="h-full bg-gradient-to-r from-[#E76F51] to-[#ff4d5a] rounded-full shadow-[0_0_10px_rgba(230,57,70,0.4)]"
                     />
                   </div>
-                  <div className="w-[45px] text-right font-mono text-xs font-semibold text-[#15604E]">{task.manual.toFixed(1)}h</div>
+                  <div className="w-[45px] text-right font-mono text-xs font-semibold text-[#E76F51]">{task.manual.toFixed(1)}h</div>
                 </div>
 
                 {/* After AI Bar */}
                 <div className="flex items-center gap-3">
-                  <div className="w-[65px] text-sm md:text-base font-extrabold font-mono tracking-wider uppercase text-[#15604E]">After AI</div>
+                  <div className="w-[65px] text-sm md:text-base font-extrabold font-mono tracking-wider uppercase text-[#E76F51]">After AI</div>
                   <div className="flex-1 h-1.5 rounded-full bg-[#EAEAE6]">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${autoPct}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: i * 0.1 + 0.2, ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-[#15604E] to-[#34c2b2] rounded-full shadow-[0_0_10px_rgba(42,157,143,0.4)]"
+                      className="h-full bg-gradient-to-r from-[#E76F51] to-[#34c2b2] rounded-full shadow-[0_0_10px_rgba(42,157,143,0.4)]"
                     />
                   </div>
-                  <div className="w-[45px] text-right font-mono text-xs font-semibold text-[#15604E]">{task.auto.toFixed(1)}h</div>
+                  <div className="w-[45px] text-right font-mono text-xs font-semibold text-[#E76F51]">{task.auto.toFixed(1)}h</div>
                 </div>
               </div>
             </div>
@@ -79,8 +79,8 @@ export default function TimeAuditWidget() {
            <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.2em] text-[#666666]">
              Total hours reclaimed
            </div>
-           <div className="font-serif text-3xl md:text-4xl text-[#15604E] mt-1">
-             +{SAVED.toFixed(1)} <span className="text-xl md:text-2xl font-sans italic text-[#15604E]/60">hrs/wk</span>
+           <div className="font-serif text-3xl md:text-4xl text-[#E76F51] mt-1">
+             +{SAVED.toFixed(1)} <span className="text-xl md:text-2xl font-sans italic text-[#E76F51]/60">hrs/wk</span>
            </div>
         </div>
         <div className="text-right">

@@ -143,12 +143,12 @@ export default function Navbar() {
                     onClick={() => setOpen(false)}
                     data-testid={`nav-mobile-link-${item.label.toLowerCase().replace(/\s/g, "-")}`}
                     className={`flex justify-between items-center py-5 border-b border-[#DCDCCF]/60 group transition-colors duration-200 ${
-                      isActive ? "text-[#15604E]" : "text-[#1A1916] hover:text-[#15604E]"
+                      isActive ? "text-[#E76F51]" : "text-[#1A1916] hover:text-[#E76F51]"
                     }`}
                   >
                     <span className="font-serif text-3xl italic">{item.label}</span>
                     <ArrowUpRight
-                      className={`w-6 h-6 text-[#15604E] transition-all duration-200 ${
+                      className={`w-6 h-6 text-[#E76F51] transition-all duration-200 ${
                         isActive
                           ? "opacity-100"
                           : "opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -167,7 +167,7 @@ export default function Navbar() {
               href="#enrol"
               onClick={handleCTAClick}
               data-testid="nav-mobile-cta"
-              className="mt-6 inline-flex items-center justify-center gap-2 bg-[#15604E] text-white px-6 py-4 rounded-full text-sm font-medium button-sweep-effect w-full shadow-lg hover:bg-[#1B7560] transition-colors duration-300"
+              className="mt-6 inline-flex items-center justify-center gap-2 bg-[#E76F51] text-white px-6 py-4 rounded-full text-sm font-medium button-sweep-effect w-full shadow-lg hover:bg-[#1B7560] transition-colors duration-300"
             >
               Unlock Access <ArrowUpRight className="w-4 h-4" />
             </motion.a>
@@ -191,7 +191,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" data-testid="nav-logo" className="flex items-center gap-2 shrink-0">
             <span className="font-serif text-2xl md:text-3xl italic leading-none">
-              Clarity<span className="text-[#15604E]">.</span>
+              Clarity<span className="text-[#E76F51]">.</span>
             </span>
           </a>
 
@@ -209,7 +209,7 @@ export default function Navbar() {
                   onMouseEnter={() => setHoveredLabel(item.label)}
                   data-testid={`nav-link-${item.label.toLowerCase().replace(/\s/g, "-")}`}
                   className={`relative px-4 py-2.5 rounded-full text-sm font-medium tracking-wide transition-colors duration-300 ${
-                    isActive ? "text-[#15604E]" : "text-[#1A1916]/80 hover:text-[#1A1916]"
+                    isActive ? "text-[#E76F51]" : "text-[#1A1916]/80 hover:text-[#1A1916]"
                   }`}
                 >
                   {hoveredLabel === item.label && (
@@ -222,7 +222,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-active-line"
-                      className="absolute bottom-1 left-4 right-4 h-[2px] bg-[#15604E] rounded-full z-20"
+                      className="absolute bottom-1 left-4 right-4 h-[2px] bg-[#E76F51] rounded-full z-20"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -237,7 +237,7 @@ export default function Navbar() {
             href="#enrol"
             onClick={handleCTAClick}
             data-testid="nav-cta-button"
-            className="hidden md:inline-flex items-center gap-2 bg-[#15604E] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1B7560] transition-colors duration-300 button-sweep-effect shrink-0 shadow-sm hover:shadow"
+            className="hidden md:inline-flex items-center gap-2 bg-[#E76F51] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1B7560] transition-colors duration-300 button-sweep-effect shrink-0 shadow-sm hover:shadow"
           >
             Unlock Access
             <ArrowUpRight className="w-4 h-4" />

@@ -37,7 +37,7 @@ export default function PillChoice() {
             The choice
           </div>
           <h2 className="mt-4 font-serif text-[4.5rem] md:text-[6.5rem] lg:text-[8.5rem] leading-[0.95] tracking-tight">
-            Choose this. <span className="block md:inline italic text-[#15604E]">Or this.</span>
+            Choose this. <span className="block md:inline italic text-[#E76F51]">Or this.</span>
           </h2>
         </motion.div>
 
@@ -111,14 +111,14 @@ export default function PillChoice() {
                 : { scale: 1, opacity: 1, filter: "blur(0px) grayscale(0%)" }
             }
             data-testid="red-pill-card"
-            className="relative group overflow-hidden rounded-3xl aspect-[4/5] md:aspect-[3/4] border border-[#DCDCCF] cursor-pointer transition-all duration-[600ms] hover:border-[#15604E]/60 hover:shadow-[0_0_30px_rgba(230,57,70,0.15)]"
+            className="relative group overflow-hidden rounded-3xl aspect-[4/5] md:aspect-[3/4] border border-[#DCDCCF] cursor-pointer transition-all duration-[600ms] hover:border-[#E76F51]/60 hover:shadow-[0_0_30px_rgba(230,57,70,0.15)]"
           >
             <img
               src="https://images.unsplash.com/photo-1713947505775-4e3af92a4ee7?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200"
               alt="Confident professional"
               className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-[1500ms]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#15604E]/90 via-[#15604E]/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#E76F51]/90 via-[#E76F51]/40 to-transparent"></div>
             <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end text-[#FAF8F3]">
               <div className="inline-flex items-center gap-2 font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#FAF8F3] drop-shadow-md">
                 <span className="w-2 h-2 rounded-full bg-[#e63946] pulse-dot"></span>{" "}
@@ -155,7 +155,7 @@ export default function PillChoice() {
         >
           <h3 className="font-serif text-3xl md:text-5xl leading-tight">
             A year from now, will you wish you&apos;d{" "}
-            <span className="italic text-[#15604E]">started?</span>
+            <span className="italic text-[#E76F51]">started?</span>
           </h3>
           <p className="mt-4 text-[#666666] text-base md:text-lg">
             Not because of urgency. Because considered things tend to compound.

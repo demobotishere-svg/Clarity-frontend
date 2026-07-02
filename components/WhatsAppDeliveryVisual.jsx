@@ -36,7 +36,7 @@ export default function WhatsAppDeliveryVisual() {
       <div className="w-full max-w-[320px] mx-auto bg-white rounded-[2.5rem] border-[6px] sm:border-[8px] border-[#1A1916] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col h-[480px]">
          
          {/* WhatsApp Header */}
-         <div className="bg-[#15604E] text-white px-4 py-3 flex items-center gap-3 z-20 shadow-md relative">
+         <div className="bg-[#E76F51] text-white px-4 py-3 flex items-center gap-3 z-20 shadow-md relative">
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20 shadow-inner">
                <Bot className="w-5 h-5 text-white" />
             </div>
@@ -78,8 +78,8 @@ export default function WhatsAppDeliveryVisual() {
                        className="bg-white rounded-2xl rounded-tl-none p-2 shadow-sm self-start max-w-[90%] w-full border border-black/5"
                      >
                        <div className="bg-[#FAF8F3] border border-[#DCDCCF] rounded-xl p-2.5 flex items-center gap-3 mb-1.5 cursor-pointer hover:bg-[#f5f1e8] transition-colors">
-                          <div className="w-9 h-9 rounded-lg bg-[#15604E]/10 flex items-center justify-center shrink-0">
-                             <FileText className="w-4 h-4 text-[#15604E]" />
+                          <div className="w-9 h-9 rounded-lg bg-[#E76F51]/10 flex items-center justify-center shrink-0">
+                             <FileText className="w-4 h-4 text-[#E76F51]" />
                           </div>
                           <div className="flex-1 min-w-0">
                              <div className="text-[#1A1916] text-[11px] font-bold truncate">Architects_Blueprint.pdf</div>
@@ -99,7 +99,7 @@ export default function WhatsAppDeliveryVisual() {
                        className="bg-white rounded-2xl rounded-tl-none p-2 shadow-sm self-start max-w-[90%] w-full border border-black/5"
                      >
                        <div className="relative w-full h-28 rounded-xl bg-black overflow-hidden mb-2 group cursor-pointer">
-                          <div className="absolute inset-0 bg-gradient-to-tr from-[#15604E] to-[#1A1916] opacity-90 group-hover:opacity-70 transition-opacity" />
+                          <div className="absolute inset-0 bg-gradient-to-tr from-[#E76F51] to-[#1A1916] opacity-90 group-hover:opacity-70 transition-opacity" />
                           <div className="absolute inset-0 flex items-center justify-center">
                              <PlayCircle className="w-10 h-10 text-white opacity-90 shadow-2xl group-hover:scale-110 transition-transform" />
                           </div>
@@ -122,9 +122,9 @@ export default function WhatsAppDeliveryVisual() {
                        exit={{ opacity: 0, scale: 0.9, originX: 0 }}
                        className="bg-white rounded-2xl rounded-tl-none px-4 py-3 shadow-sm self-start inline-flex items-center gap-1 border border-black/5"
                      >
-                       <motion.div animate={{ y: [0, -3, 0] }} transition={{ repeat: Infinity, duration: 1, delay: 0 }} className="w-1.5 h-1.5 bg-[#15604E]/50 rounded-full" />
-                       <motion.div animate={{ y: [0, -3, 0] }} transition={{ repeat: Infinity, duration: 1, delay: 0.2 }} className="w-1.5 h-1.5 bg-[#15604E]/50 rounded-full" />
-                       <motion.div animate={{ y: [0, -3, 0] }} transition={{ repeat: Infinity, duration: 1, delay: 0.4 }} className="w-1.5 h-1.5 bg-[#15604E]/50 rounded-full" />
+                       <motion.div animate={{ y: [0, -3, 0] }} transition={{ repeat: Infinity, duration: 1, delay: 0 }} className="w-1.5 h-1.5 bg-[#E76F51]/50 rounded-full" />
+                       <motion.div animate={{ y: [0, -3, 0] }} transition={{ repeat: Infinity, duration: 1, delay: 0.2 }} className="w-1.5 h-1.5 bg-[#E76F51]/50 rounded-full" />
+                       <motion.div animate={{ y: [0, -3, 0] }} transition={{ repeat: Infinity, duration: 1, delay: 0.4 }} className="w-1.5 h-1.5 bg-[#E76F51]/50 rounded-full" />
                      </motion.div>
                   )}
                </AnimatePresence>

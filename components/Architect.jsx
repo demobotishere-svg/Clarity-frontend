@@ -17,7 +17,7 @@ export default function Architect() {
           className="mb-16 md:mb-24"
         >
           <h2 className="font-serif text-[clamp(2.2rem,5vw,4.5rem)] leading-[1.1] text-[#1A1916] tracking-tight max-w-3xl mx-auto">
-            AI can <span className="italic text-[#15604E]">generate.</span> But it cannot <span className="italic text-[#15604E]">architect.</span>
+            AI can <span className="italic text-[#E76F51]">generate.</span> But it cannot <span className="italic text-[#E76F51]">architect.</span>
           </h2>
         </motion.div>
 
@@ -57,14 +57,14 @@ export default function Architect() {
           {/* Right Side: Architecture */}
           <div className="flex flex-col items-center">
             <svg viewBox="0 0 140 90" className="w-[120px] md:w-[160px] h-auto mb-6">
-              <rect x="58" y="8" width="24" height="16" rx="3" fill="none" stroke="#15604E" strokeWidth="2" />
-              <rect x="20" y="40" width="24" height="16" rx="3" fill="none" stroke="#15604E" strokeWidth="2" />
-              <rect x="58" y="40" width="24" height="16" rx="3" fill="none" stroke="#15604E" strokeWidth="2" />
-              <rect x="96" y="40" width="24" height="16" rx="3" fill="none" stroke="#15604E" strokeWidth="2" />
-              <rect x="58" y="70" width="24" height="14" rx="3" fill="none" stroke="#15604E" strokeWidth="2" />
-              <path d="M70 24v16M70 40v0M32 40v-8h76v8M70 56v14" stroke="#15604E" strokeWidth="1.5" fill="none" opacity="0.5" />
+              <rect x="58" y="8" width="24" height="16" rx="3" fill="none" stroke="#E76F51" strokeWidth="2" />
+              <rect x="20" y="40" width="24" height="16" rx="3" fill="none" stroke="#E76F51" strokeWidth="2" />
+              <rect x="58" y="40" width="24" height="16" rx="3" fill="none" stroke="#E76F51" strokeWidth="2" />
+              <rect x="96" y="40" width="24" height="16" rx="3" fill="none" stroke="#E76F51" strokeWidth="2" />
+              <rect x="58" y="70" width="24" height="14" rx="3" fill="none" stroke="#E76F51" strokeWidth="2" />
+              <path d="M70 24v16M70 40v0M32 40v-8h76v8M70 56v14" stroke="#E76F51" strokeWidth="1.5" fill="none" opacity="0.5" />
             </svg>
-            <span className="text-xs md:text-sm font-semibold text-[#15604E] tracking-wide">
+            <span className="text-xs md:text-sm font-semibold text-[#E76F51] tracking-wide">
               Architecture — chosen, structured
             </span>
           </div>

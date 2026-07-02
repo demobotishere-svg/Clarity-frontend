@@ -39,7 +39,7 @@ export default function ProgramComparison() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
           <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] tracking-tight text-[#1A1916]">
-            Why we are <span className="italic text-[#15604E]">different.</span>
+            Why we are <span className="italic text-[#E76F51]">different.</span>
           </h2>
         </div>
 
@@ -51,7 +51,7 @@ export default function ProgramComparison() {
             <div className="p-5 md:p-8 font-bold text-[#1A1916] flex items-center md:justify-start justify-center text-center md:text-left">
               What You Get
             </div>
-            <div className="p-5 md:p-8 font-bold text-[#15604E] flex items-center justify-center text-center bg-[#F4F9F5]">
+            <div className="p-5 md:p-8 font-bold text-[#E76F51] flex items-center justify-center text-center bg-[#F4F9F5]">
               The Clarity Program
             </div>
             <div className="p-5 md:p-8 text-[#666666] flex items-center justify-center text-center">
@@ -71,8 +71,8 @@ export default function ProgramComparison() {
                 {row.feature}
               </div>
               <div className="flex flex-row md:contents">
-                <div className="flex-1 p-4 md:p-8 text-[#15604E] font-medium flex flex-col md:flex-row items-center justify-center text-center bg-[#F4F9F5] border-r md:border-x border-[#EAEAE6]/50">
-                  <span className="md:hidden text-[9px] uppercase tracking-widest text-[#15604E]/50 font-bold mb-1">Clarity</span>
+                <div className="flex-1 p-4 md:p-8 text-[#E76F51] font-medium flex flex-col md:flex-row items-center justify-center text-center bg-[#F4F9F5] border-r md:border-x border-[#EAEAE6]/50">
+                  <span className="md:hidden text-[9px] uppercase tracking-widest text-[#E76F51]/50 font-bold mb-1">Clarity</span>
                   {row.clarity}
                 </div>
                 <div className="flex-1 p-4 md:p-8 text-[#666666] flex flex-col md:flex-row items-center justify-center text-center">

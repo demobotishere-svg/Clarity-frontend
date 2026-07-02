@@ -150,7 +150,7 @@ export default function AgentDashboard() {
           ai-native.system / live
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#15604E] pulse-dot"></span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#E76F51] pulse-dot"></span>
           <span className="font-mono text-[10px] text-[#666666]">online</span>
         </div>
       </div>
@@ -168,7 +168,7 @@ export default function AgentDashboard() {
               live
             </div>
             <div className="flex items-center gap-1.5 mt-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#15604E] pulse-dot"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E76F51] pulse-dot"></span>
               <span className="text-xs">{step}/4 running</span>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function AgentDashboard() {
                       animate={{ 
                         opacity: 1, 
                         y: 0,
-                        borderColor: isProcessing ? "#F4A261" : ["#DCDCCF", "#15604E", "#15604E"],
+                        borderColor: isProcessing ? "#F4A261" : ["#DCDCCF", "#E76F51", "#E76F51"],
                         boxShadow: isProcessing 
                           ? "0 0 10px rgba(244,162,97,0.12)" 
                           : ["0px 0px 0px rgba(42,157,143,0)", "0px 0px 16px rgba(42,157,143,0.45)", "0px 0px 10px rgba(42,157,143,0.1)"]
@@ -219,7 +219,7 @@ export default function AgentDashboard() {
                         className={`flex items-center justify-center w-8 h-8 rounded-full shrink-0 ${
                           isProcessing
                             ? "bg-[#F4A261]/15 text-[#F4A261]"
-                            : "bg-[#15604E]/15 text-[#15604E]"
+                            : "bg-[#E76F51]/15 text-[#E76F51]"
                         }`}
                       >
                         {isProcessing ? (
@@ -242,7 +242,7 @@ export default function AgentDashboard() {
                         className={`font-mono text-[10px] px-2 py-1 rounded-full ${
                           isProcessing
                             ? "bg-[#F4A261]/10 text-[#F4A261]"
-                            : "bg-[#15604E]/10 text-[#15604E]"
+                            : "bg-[#E76F51]/10 text-[#E76F51]"
                         }`}
                       >
                         {isProcessing ? "in progress" : `done · ${task.time}`}
@@ -283,7 +283,7 @@ export default function AgentDashboard() {
           <div className="absolute left-0 bottom-0 h-[2px] bg-[#DCDCCF]/20 w-full">
             <div
               ref={progressRef}
-              className="h-full bg-[#15604E]"
+              className="h-full bg-[#E76F51]"
               style={{ width: "0%" }}
             ></div>
           </div>

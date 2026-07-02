@@ -16,12 +16,12 @@ export default function FinalCTA() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <h2 className="font-serif text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.18] tracking-tight text-[#FAF8F3] font-light max-w-3xl mx-auto mb-10">
-            A year from now, you&apos;ll either be the person who finally understood this — or the one <span className="italic text-[#15604E]">still wondering</span> where to start.
+            A year from now, you&apos;ll either be the person who finally understood this — or the one <span className="italic text-[#E76F51]">still wondering</span> where to start.
           </h2>
           
           <a 
             href="#lead-form-final"
-            className="group inline-flex items-center justify-center gap-3 bg-[#15604E] text-white px-9 py-4 rounded-xl font-semibold text-lg hover:bg-[#21867a] hover:-translate-y-1 transition-all shadow-[0_12px_28px_rgba(42,157,143,0.25)]"
+            className="group inline-flex items-center justify-center gap-3 bg-[#E76F51] text-white px-9 py-4 rounded-xl font-semibold text-lg hover:bg-[#21867a] hover:-translate-y-1 transition-all shadow-[0_12px_28px_rgba(42,157,143,0.25)]"
           >
             Unlock Now
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

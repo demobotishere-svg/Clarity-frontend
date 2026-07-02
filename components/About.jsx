@@ -77,7 +77,7 @@ export default function About() {
             <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6 border-t border-[#DCDCCF] pt-8">
               {STATS.map((s) => (
                 <div key={s.k} data-testid="about-stat" className="border-l border-[#DCDCCF] pl-4">
-                  <div className="font-serif text-xl md:text-2xl italic font-light leading-none bg-clip-text text-transparent bg-gradient-to-r from-[#15604E] via-[#F4A261] to-[#15604E] w-fit pr-1">{s.k}</div>
+                  <div className="font-serif text-xl md:text-2xl italic font-light leading-none bg-clip-text text-transparent bg-gradient-to-r from-[#E76F51] via-[#F4A261] to-[#E76F51] w-fit pr-1">{s.k}</div>
                   <div className="font-mono text-sm md:text-base font-extrabold md:text-[11px] uppercase tracking-widest text-[#666666] mt-2.5 leading-snug">
                     {s.v}
                   </div>

@@ -138,14 +138,14 @@ function GymMockup() {
           </div>
           <div className="w-full h-[80px] flex items-end gap-1.5 mt-2">
              {[20, 35, 25, 45, 60, 55, 80, 40, 95, 65, 100].map((h, i) => (
-               <div key={i} className="flex-1 rounded-t-sm" style={{ height: `${h}%`, backgroundColor: i > 8 ? '#15604E' : 'rgba(255,255,255,0.1)' }} />
+               <div key={i} className="flex-1 rounded-t-sm" style={{ height: `${h}%`, backgroundColor: i > 8 ? '#E76F51' : 'rgba(255,255,255,0.1)' }} />
              ))}
           </div>
           <div className="flex flex-col gap-2 mt-auto">
              <div className="text-white/40 text-sm md:text-base font-extrabold uppercase tracking-wider">Latest Automations</div>
              <div className="bg-white/5 border border-white/10 rounded-lg p-2 flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                   <div className="w-2 h-2 rounded-full bg-[#15604E]" />
+                   <div className="w-2 h-2 rounded-full bg-[#E76F51]" />
                    <div className="text-white/80 text-xs">Replied to @fitness_junkie</div>
                 </div>
                 <div className="text-white/30 text-[10px]">2m ago</div>
@@ -408,13 +408,13 @@ export default function Testimonials() {
 
         {/* Featured Case Studies */}
         <div className="text-center mb-12 md:mb-20 max-w-4xl mx-auto px-4">
-          <div className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-[#15604E] font-bold mb-5 flex items-center justify-center gap-4">
-            <span className="w-8 md:w-12 h-[1px] bg-[#15604E]/30"></span>
+          <div className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-[#E76F51] font-bold mb-5 flex items-center justify-center gap-4">
+            <span className="w-8 md:w-12 h-[1px] bg-[#E76F51]/30"></span>
             Proof of Work
-            <span className="w-8 md:w-12 h-[1px] bg-[#15604E]/30"></span>
+            <span className="w-8 md:w-12 h-[1px] bg-[#E76F51]/30"></span>
           </div>
           <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-[#1A1916]">
-            See what our <span className="italic text-[#15604E] relative inline-block">
+            See what our <span className="italic text-[#E76F51] relative inline-block">
               alumni built.
               <span className="absolute left-0 -bottom-2 md:-bottom-3 h-[3px] md:h-[5px] w-full bg-[#F4A261] rounded-full opacity-80" />
             </span>
@@ -449,7 +449,7 @@ export default function Testimonials() {
             >
               {/* Graphic Side */}
               <div className={`order-1 h-[220px] md:h-[260px] border-b relative overflow-hidden flex flex-col justify-center shrink-0 ${idx % 2 === 0 ? "bg-[#fcfcfc] border-[#DCDCCF]" : "bg-[#F9F9F6] border-[#DCDCCF]"}`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#15604E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#E76F51]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
                 <div className="w-full h-full flex items-center justify-center group-hover:scale-[1.03] transition-transform duration-700 relative z-0 pt-10 px-2 scale-[0.65] md:scale-[0.75] origin-center">
                   {study.graphic}
                 </div>
@@ -460,8 +460,8 @@ export default function Testimonials() {
                 <div className="mb-4 relative z-10 flex items-center">
                   <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border shadow-sm transition-all hover:scale-[1.02] duration-300 ${idx % 2 === 0 ? "bg-white border-black/5 text-[#1A1916]" : "bg-white/60 border-black/5 text-[#1A1916]"}`}>
                     <span className="relative flex h-2 w-2 shrink-0">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#15604E] opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#15604E] shadow-[0_0_8px_rgba(230,57,70,0.8)]"></span>
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E76F51] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E76F51] shadow-[0_0_8px_rgba(230,57,70,0.8)]"></span>
                     </span>
                     <span className="font-sans font-bold text-[11px] md:text-xs tracking-wide">{study.metric}</span>
                   </div>
@@ -507,7 +507,7 @@ export default function Testimonials() {
           {[...MARQUEE_QUOTES, ...MARQUEE_QUOTES].map((q, i) => (
             <div key={i} className="flex items-center gap-8">
               <span className="font-serif italic text-black/50 text-lg">"{q}"</span>
-              <span className="text-[#15604E] text-xs">✦</span>
+              <span className="text-[#E76F51] text-xs">✦</span>
             </div>
           ))}
         </div>

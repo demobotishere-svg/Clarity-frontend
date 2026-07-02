@@ -19,8 +19,8 @@ const CustomTooltip = ({ active, payload, label }) => {
       <div className="bg-white p-3 border border-[#DCDCCF] shadow-lg rounded-xl">
         <p className="font-semibold text-sm mb-1">{label}</p>
         <div className="space-y-1 text-sm">
-          <p className="text-[#15604E] font-medium flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#15604E]"></span>
+          <p className="text-[#E76F51] font-medium flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#E76F51]"></span>
             Clarity: {payload[1].value}
           </p>
           <p className="text-gray-500 flex items-center gap-2">
@@ -63,8 +63,8 @@ export default function GrowthChart({ isDark = false }) {
             <span className={isDark ? "text-white/70" : "text-gray-600"}>Without AI</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#15604E]"></span>
-            <span className={isDark ? "text-white" : "text-[#15604E]"}>With Clarity</span>
+            <span className="w-2 h-2 rounded-full bg-[#E76F51]"></span>
+            <span className={isDark ? "text-white" : "text-[#E76F51]"}>With Clarity</span>
           </div>
         </div>
       </div>
@@ -74,8 +74,8 @@ export default function GrowthChart({ isDark = false }) {
           <AreaChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
             <defs>
               <linearGradient id="colorClarity" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#15604E" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="#15604E" stopOpacity={0}/>
+                <stop offset="5%" stopColor="#E76F51" stopOpacity={0.3}/>
+                <stop offset="95%" stopColor="#E76F51" stopOpacity={0}/>
               </linearGradient>
               <linearGradient id="colorTrad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor={isDark ? "#ffffff" : "#000000"} stopOpacity={0.1}/>
@@ -87,7 +87,7 @@ export default function GrowthChart({ isDark = false }) {
             <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: isDark ? 'rgba(255,255,255,0.4)' : '#888' }} />
             <Tooltip content={<CustomTooltip />} />
             <Area type="monotone" dataKey="traditional" stroke={isDark ? "rgba(255,255,255,0.3)" : "#ccc"} strokeWidth={2} fillOpacity={1} fill="url(#colorTrad)" />
-            <Area type="monotone" dataKey="clarity" stroke="#15604E" strokeWidth={3} fillOpacity={1} fill="url(#colorClarity)" />
+            <Area type="monotone" dataKey="clarity" stroke="#E76F51" strokeWidth={3} fillOpacity={1} fill="url(#colorClarity)" />
           </AreaChart>
         </ResponsiveContainer>
       </div>

@@ -100,7 +100,7 @@ const FooterSection = () => {
                       aria-label={label}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:bg-[#15604E] hover:text-white hover:border-[#15604E] transition-all shadow-sm"
+                      className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:bg-[#E76F51] hover:text-white hover:border-[#E76F51] transition-all shadow-sm"
                     >
                       <Icon size={18} />
                     </Link>

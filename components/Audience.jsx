@@ -116,14 +116,14 @@ export default function Audience() {
               className="group relative overflow-hidden bg-white border border-[#DCDCCF]/80 rounded-2xl p-6 md:p-7 hover:border-[#1A1916] transition-all duration-500 hover:shadow-2xl"
             >
               {/* Dynamic Design Accent */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#15604E]/[0.02] to-[#15604E]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#15604E] to-[#15604E] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#E76F51]/[0.02] to-[#E76F51]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#E76F51] to-[#E76F51] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 pointer-events-none" />
               
               <div className="relative z-10 flex items-start justify-between">
                 <div className="w-10 h-10 rounded-xl bg-[#FAF8F3] border border-[#DCDCCF] flex items-center justify-center group-hover:bg-[#1A1916] group-hover:text-[#FAF8F3] group-hover:border-[#1A1916] transition-all">
                   <Icon className="w-5 h-5" strokeWidth={1.5} />
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-[#1A1916]/30 group-hover:text-[#15604E] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                <ArrowUpRight className="w-4 h-4 text-[#1A1916]/30 group-hover:text-[#E76F51] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
               </div>
               <h3 className="relative z-10 mt-6 font-serif text-2xl leading-tight">{title}</h3>
               <p className="relative z-10 mt-3 text-sm text-[#666666] leading-relaxed">{body}</p>
@@ -136,7 +136,7 @@ export default function Audience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease }}
-            className="bg-[#15604E] text-white rounded-[2rem] p-8 md:p-12 shadow-lg"
+            className="bg-[#E76F51] text-white rounded-[2rem] p-8 md:p-12 shadow-lg"
           >
             <div className="text-sm font-semibold tracking-widest uppercase text-white/80 mb-8 flex items-center gap-3">
               This is you
@@ -173,7 +173,7 @@ export default function Audience() {
                 "You prefer passive learning and won't actually build during the live sessions."
               ].map((item, idx) => (
                 <li key={idx} className="flex gap-4 items-start text-[#666666] text-base md:text-lg leading-relaxed">
-                  <span className="font-bold text-[#15604E] shrink-0 mt-0.5">✕</span>
+                  <span className="font-bold text-[#E76F51] shrink-0 mt-0.5">✕</span>
                   <span>{item}</span>
                 </li>
               ))}

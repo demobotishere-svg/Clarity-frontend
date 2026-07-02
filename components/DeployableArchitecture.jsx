@@ -13,13 +13,13 @@ export default function DeployableArchitecture() {
       transition={{ duration: 0.8, delay: 0.2 }}
       className="w-full mt-8 md:mt-12 p-6 md:p-8 bg-white border border-[#DCDCCF] rounded-[2rem] shadow-sm relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[#15604E]/[0.03] to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#E76F51]/[0.03] to-transparent pointer-events-none" />
       
       <div className="flex justify-between items-center mb-8 relative z-10">
         <h4 className="text-xs md:text-sm font-semibold uppercase tracking-wider text-gray-500">
           The 15-Min Architecture
         </h4>
-        <span className="text-[10px] font-bold tracking-wide uppercase bg-[#15604E]/10 text-[#15604E] px-3 py-1.5 rounded-full">
+        <span className="text-[10px] font-bold tracking-wide uppercase bg-[#E76F51]/10 text-[#E76F51] px-3 py-1.5 rounded-full">
           Deployable Today
         </span>
       </div>
@@ -53,7 +53,7 @@ export default function DeployableArchitecture() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="flex-1 w-full bg-gradient-to-br from-[#15604E] to-[#0f4538] border border-[#15604E] rounded-2xl p-5 text-center relative shadow-lg shadow-[#15604E]/20"
+          className="flex-1 w-full bg-gradient-to-br from-[#E76F51] to-[#0f4538] border border-[#E76F51] rounded-2xl p-5 text-center relative shadow-lg shadow-[#E76F51]/20"
         >
           <motion.div 
             animate={{ rotate: 360 }}

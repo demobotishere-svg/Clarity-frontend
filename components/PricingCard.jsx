@@ -31,7 +31,7 @@ export default function PricingCard() {
         {details.map((item, index) => (
           <div key={index} className="flex items-center justify-between py-2.5 border-b border-[#EAEAE6] last:border-0">
             <div className="flex items-center gap-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#15604E]"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E76F51]"></span>
               <span className="text-[#666666] text-sm md:text-base font-medium">{item.label}</span>
             </div>
             <div className="font-bold text-[#1A1916] text-sm md:text-base text-right">
@@ -43,7 +43,7 @@ export default function PricingCard() {
 
       <a 
         href="#enrol"
-        className="w-full bg-[#15604E] hover:bg-[#1B7560] text-white rounded-2xl py-3.5 font-bold text-lg transition-colors flex items-center justify-center gap-2 mb-3 shadow-md hover:shadow-xl hover:-translate-y-0.5 group"
+        className="w-full bg-[#E76F51] hover:bg-[#1B7560] text-white rounded-2xl py-3.5 font-bold text-lg transition-colors flex items-center justify-center gap-2 mb-3 shadow-md hover:shadow-xl hover:-translate-y-0.5 group"
       >
         Reserve your seat <span className="text-xl leading-none transition-transform group-hover:translate-x-1">→</span>
       </a>

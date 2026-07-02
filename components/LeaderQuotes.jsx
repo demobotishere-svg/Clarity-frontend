@@ -24,7 +24,7 @@ export default function LeaderQuotes() {
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
             The people who direct AI<br />
-            <span className="italic text-[#15604E]">are pulling away.</span>
+            <span className="italic text-[#E76F51]">are pulling away.</span>
           </h2>
           <p className="mt-6 text-lg text-[#666666] max-w-2xl mx-auto">
             You don't have to take our word for it. The builders and leaders watching this shift up close are saying the same thing — and changing who they pay, hire, and keep.

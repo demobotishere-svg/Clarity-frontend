@@ -78,7 +78,7 @@ export default function Comparison() {
               <span className="italic text-[#FAF8F3]/70">1 person + AI</span> ={" "}
               <span className="relative inline-block mt-1">
                 total powerhouse
-                <span className="absolute left-0 -bottom-2 h-[3px] md:h-[4px] w-full bg-[#15604E] rounded-full" />
+                <span className="absolute left-0 -bottom-2 h-[3px] md:h-[4px] w-full bg-[#E76F51] rounded-full" />
               </span>
               .
             </h2>
@@ -160,7 +160,7 @@ export default function Comparison() {
             transition={{ duration: 0.8, ease, delay: 0.15 }}
             whileHover={{ scale: 1.02, y: -4, transition: { duration: 0.3, ease } }}
             data-testid="ai-native-card"
-            className="relative rounded-3xl p-8 md:p-10 bg-white border border-[#15604E]/20 ring-glow shimmer-border overflow-hidden cursor-default transition-shadow duration-300 hover:shadow-[0_25px_60px_-20px_rgba(230,57,70,0.12)]"
+            className="relative rounded-3xl p-8 md:p-10 bg-white border border-[#E76F51]/20 ring-glow shimmer-border overflow-hidden cursor-default transition-shadow duration-300 hover:shadow-[0_25px_60px_-20px_rgba(230,57,70,0.12)]"
           >
             {/* Happy man image — right half, faded in from left */}
             <div
@@ -183,9 +183,9 @@ export default function Comparison() {
 
             {/* Text content */}
             <div className="relative z-10">
-              <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#15604E]">
+              <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#E76F51]">
                 The AI-Native System{" "}
-                <span className="inline-flex items-center ml-2 px-3 py-1 rounded-md bg-[#15604E] text-white font-bold text-xs uppercase tracking-widest shadow-sm">
+                <span className="inline-flex items-center ml-2 px-3 py-1 rounded-md bg-[#E76F51] text-white font-bold text-xs uppercase tracking-widest shadow-sm">
                   what you become
                 </span>
               </div>
@@ -212,10 +212,10 @@ export default function Comparison() {
                       </div>
                     </div>
                     <div className="md:col-span-1 flex md:justify-center md:items-center">
-                      <ArrowRight className="w-4 h-4 text-[#15604E]" />
+                      <ArrowRight className="w-4 h-4 text-[#E76F51]" />
                     </div>
                     <div className="md:col-span-7">
-                      <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#15604E]">
+                      <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#E76F51]">
                         AI-native system
                       </div>
                       <div className="mt-1 text-[#1A1916]">{p.next}</div>
@@ -223,8 +223,8 @@ export default function Comparison() {
                   </motion.div>
                 ))}
               </div>
-              <div className="mt-10 inline-flex items-center gap-2 font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#15604E]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#15604E] pulse-dot" />
+              <div className="mt-10 inline-flex items-center gap-2 font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#E76F51]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E76F51] pulse-dot" />
                 Output: rested you, scaled
               </div>
             </div>
