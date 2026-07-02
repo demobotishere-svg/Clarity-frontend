@@ -8,18 +8,18 @@ export default function ClarityTakeawaysVisual() {
   const takeaways = [
     {
       icon: FileCode2,
-      title: "15-Minute Masterclass",
-      desc: "Zero fluff. A pure tactical breakdown of modern AI architecture delivered straight to you.",
+      title: "The 15-Min Breakdown",
+      desc: "No theory, no fluff. Just the exact steps I use to build my systems from scratch.",
     },
     {
       icon: Workflow,
-      title: "Deployable Systems",
-      desc: "Get the exact blueprint to build and deploy production-ready autonomous workflows.",
+      title: "Steal My Architecture",
+      desc: "Copy-paste my best workflows. You get the actual blueprints to run things on autopilot.",
     },
     {
       icon: Clock,
-      title: "20+ Hours Reclaimed",
-      desc: "Learn how to scale your impact, automate tasks, and reclaim your time every single week.",
+      title: "Save 20+ Hours A Week",
+      desc: "Stop doing grunt work. I'll show you how to hand off the boring stuff so you can clock out early.",
     }
   ];
 
