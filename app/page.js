@@ -10,7 +10,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import GridBackground from "@/components/GridBackground";
 import ScrollReveal from "@/components/ScrollReveal";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
-import GrowthChart from "@/components/GrowthChart";
+import ClarityTakeawaysVisual from "@/components/ClarityTakeawaysVisual";
 
 // Dynamically import heavy components to prevent blocking the main thread on initial load
 const LeadForm = dynamic(() => import("@/components/LeadForm"));
@@ -62,7 +62,7 @@ export default function Home() {
             description="The AI paradigm doesn't just improve efficiency—it changes the trajectory of your career. See exactly how Clarity alumni are achieving non-linear growth."
             features={["15-Min tactical breakdown", "Deployable architecture", "Instant WhatsApp access"]}
             buttonText="Unlock Growth Blueprint"
-            visualComponent={<GrowthChart />}
+            visualComponent={<ClarityTakeawaysVisual />}
           />
         </section>
 
