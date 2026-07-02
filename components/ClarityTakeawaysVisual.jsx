@@ -9,7 +9,7 @@ export default function ClarityTakeawaysVisual() {
     {
       icon: FileCode2,
       title: "The 15-Min Breakdown",
-      desc: "No theory, no fluff. Just the exact steps I use to build my systems from scratch.",
+      desc: "No theory, no filler. Just the exact steps I use to build my systems from scratch.",
     },
     {
       icon: Workflow,

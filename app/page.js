@@ -88,7 +88,7 @@ export default function Home() {
             formTitleHighlight="your unfair advantage?"
             title="We compressed 6 years into"
             titleHighlight="15 tactical minutes."
-            description="Stop endlessly scrolling through generic AI advice. We have stripped away the fluff to hand you the exact architectural blueprint used by top-tier tech executives to automate their entire workflow."
+            description="Stop endlessly scrolling through generic AI advice. We have stripped away the noise to hand you the exact architectural blueprint used by top-tier tech executives to automate their entire workflow."
             features={["Zero generic prompt templates", "100% production-ready systems", "Instant WhatsApp delivery"]}
             buttonText="Unlock the Architecture"
             visualComponent={<PremiumBlueprintVisual />}
@@ -125,7 +125,7 @@ export default function Home() {
             formTitleHighlight="your first AI system?"
             title="Give us 15 minutes."
             titleHighlight="We'll give you a system."
-            description="Watch the exact blueprint our students used to reclaim 20+ hours a week. No fluff, just practical execution."
+            description="Watch the exact blueprint our students used to reclaim 20+ hours a week. Pure, practical execution."
             features={["No coding required", "100% practical workflows", "Step-by-step guidance"]}
             buttonText="Unlock the system builder"
             visualComponent={<WorkflowMapVisual />}
