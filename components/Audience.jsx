@@ -85,7 +85,7 @@ export default function Audience() {
             </div>
             <h2 className="mt-3 font-serif text-4xl md:text-6xl lg:text-7xl leading-[1] tracking-tight">
               Any domain.{" "}
-              <span className="italic text-[#666666]">Zero code required.</span>
+              <span className="italic text-[#E76F51]">Zero code required.</span>
             </h2>
           </div>
           <div className="lg:col-span-5">
