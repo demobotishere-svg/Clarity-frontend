@@ -136,7 +136,7 @@ export default function Audience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease }}
-            className="bg-[#E76F51] text-white rounded-[2rem] p-8 md:p-12 shadow-lg"
+            className="bg-[#15604E] text-white rounded-[2rem] p-8 md:p-12 shadow-lg"
           >
             <div className="text-sm font-semibold tracking-widest uppercase text-white/80 mb-8 flex items-center gap-3">
               This is you

@@ -25,13 +25,13 @@ export default function WorkflowMapVisual() {
          <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
             {/* Path 1: Trigger -> AI */}
             <path d="M 25% 25% L 50% 50%" stroke="rgba(21, 96, 78, 0.4)" strokeWidth="2" strokeDasharray="4 4" fill="none" />
-            <circle r="4" fill="#E76F51" className="drop-shadow-[0_0_8px_#E76F51]">
+            <circle r="4" fill="#15604E" className="drop-shadow-[0_0_8px_#E76F51]">
               <animateMotion dur="2s" repeatCount="indefinite" path="M 25% 25% L 50% 50%" />
             </circle>
 
             {/* Path 2: AI -> Action */}
             <path d="M 50% 50% L 75% 75%" stroke="rgba(21, 96, 78, 0.4)" strokeWidth="2" strokeDasharray="4 4" fill="none" />
-            <circle r="4" fill="#E76F51" className="drop-shadow-[0_0_8px_#E76F51]">
+            <circle r="4" fill="#15604E" className="drop-shadow-[0_0_8px_#E76F51]">
               <animateMotion dur="2s" begin="1s" repeatCount="indefinite" path="M 50% 50% L 75% 75%" />
             </circle>
          </svg>
@@ -58,10 +58,10 @@ export default function WorkflowMapVisual() {
            whileInView={{ opacity: 1, scale: 1 }}
            viewport={{ once: true }}
            transition={{ delay: 0.2 }}
-           className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-[#E76F51]/10 border border-[#E76F51]/50 rounded-xl p-3 sm:p-4 shadow-[0_0_40px_rgba(21,96,78,0.25)] flex flex-col gap-3 w-40 sm:w-48 z-10 backdrop-blur-xl"
+           className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-[#15604E]/10 border border-[#E76F51]/50 rounded-xl p-3 sm:p-4 shadow-[0_0_40px_rgba(21,96,78,0.25)] flex flex-col gap-3 w-40 sm:w-48 z-10 backdrop-blur-xl"
          >
             <div className="flex items-center gap-3">
-               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#E76F51] flex items-center justify-center shrink-0 shadow-[0_0_15px_#E76F51]">
+               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#15604E] flex items-center justify-center shrink-0 shadow-[0_0_15px_#E76F51]">
                   <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                </div>
                <div>
@@ -74,7 +74,7 @@ export default function WorkflowMapVisual() {
                <motion.div 
                   animate={{ width: ["0%", "100%", "0%"] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="h-full bg-[#E76F51] shadow-[0_0_10px_#E76F51]"
+                  className="h-full bg-[#15604E] shadow-[0_0_10px_#E76F51]"
                />
             </div>
          </motion.div>

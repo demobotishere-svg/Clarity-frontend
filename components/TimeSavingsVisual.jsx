@@ -48,7 +48,7 @@ export default function TimeSavingsVisual() {
           transition={{ delay: 0.2 }}
           className="relative bg-gradient-to-r from-[#111111] to-[#E76F51]/15 border border-[#E76F51]/40 rounded-2xl p-4 sm:p-5 flex items-center gap-4 sm:gap-6 overflow-hidden shadow-[0_10px_40px_rgba(21,96,78,0.2)] backdrop-blur-xl"
         >
-           <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-xl bg-[#E76F51]/20 border border-[#E76F51]/50 flex items-center justify-center shadow-[0_0_20px_rgba(21,96,78,0.6)]">
+           <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-xl bg-[#15604E]/20 border border-[#E76F51]/50 flex items-center justify-center shadow-[0_0_20px_rgba(21,96,78,0.6)]">
               <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-[#E76F51]" />
            </div>
            
@@ -58,11 +58,11 @@ export default function TimeSavingsVisual() {
            </div>
 
            {/* Straight Glowing Line */}
-           <div className="flex-1 h-[2px] relative bg-[#E76F51]/30 rounded-full overflow-hidden">
+           <div className="flex-1 h-[2px] relative bg-[#15604E]/30 rounded-full overflow-hidden">
               <motion.div 
                  animate={{ x: ["-100%", "300%"] }}
                  transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                 className="w-1/2 h-full bg-[#E76F51] shadow-[0_0_12px_#E76F51]"
+                 className="w-1/2 h-full bg-[#15604E] shadow-[0_0_12px_#E76F51]"
               />
            </div>
         </motion.div>

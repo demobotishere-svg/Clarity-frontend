@@ -101,9 +101,9 @@ export default function Curriculum() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
           <div className="font-mono text-xs md:text-sm uppercase tracking-[0.25em] text-[#E76F51] font-bold mb-6 flex items-center justify-center gap-4">
-            <span className="w-8 md:w-12 h-[1px] bg-[#E76F51]/30"></span>
+            <span className="w-8 md:w-12 h-[1px] bg-[#15604E]/30"></span>
             Official Certification
-            <span className="w-8 md:w-12 h-[1px] bg-[#E76F51]/30"></span>
+            <span className="w-8 md:w-12 h-[1px] bg-[#15604E]/30"></span>
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight text-[#1A1916]">
             The standard of <span className="italic text-[#E76F51]">execution.</span>
@@ -114,7 +114,7 @@ export default function Curriculum() {
           
           {/* Left Column: Certificate Mockup */}
           <div className="w-full max-w-lg mx-auto lg:max-w-none relative group order-2 lg:order-1 mt-8 lg:mt-0">
-            <div className="absolute -inset-4 bg-[#E76F51]/10 blur-2xl rounded-[3rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="absolute -inset-4 bg-[#15604E]/10 blur-2xl rounded-[3rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             <CertificateMockup />
           </div>
 

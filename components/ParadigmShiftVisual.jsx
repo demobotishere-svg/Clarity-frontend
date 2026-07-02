@@ -41,14 +41,14 @@ export default function ParadigmShiftVisual() {
            className="flex-1 rounded-2xl border border-[#E76F51]/30 bg-[#1A1916] p-5 flex flex-col items-center text-center shadow-[0_15px_40px_rgba(21,96,78,0.25)] relative overflow-hidden"
          >
             {/* Glowing background */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#E76F51]/20 blur-2xl rounded-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#15604E]/20 blur-2xl rounded-full pointer-events-none" />
             
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#E76F51]/20 border border-[#E76F51]/50 flex items-center justify-center mb-4 relative shadow-[0_0_20px_rgba(21,96,78,0.4)]">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#15604E]/20 border border-[#E76F51]/50 flex items-center justify-center mb-4 relative shadow-[0_0_20px_rgba(21,96,78,0.4)]">
                <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-[#E76F51] relative z-10" />
                <motion.div 
                  animate={{ scale: [1, 1.25, 1] }}
                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute inset-0 rounded-full bg-[#E76F51]/30"
+                 className="absolute inset-0 rounded-full bg-[#15604E]/30"
                />
             </div>
             <h4 className="font-serif text-sm sm:text-lg font-bold text-white mb-3">The Architect</h4>

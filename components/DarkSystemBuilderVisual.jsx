@@ -46,7 +46,7 @@ export default function DarkSystemBuilderVisual() {
             transition={{ delay: 0.2 }}
             className="relative z-10 w-full max-w-[340px] bg-gradient-to-r from-[#111111] to-[#161616] border border-[#E76F51]/40 rounded-2xl p-5 flex items-center gap-5 shadow-[0_0_40px_rgba(21,96,78,0.2)] backdrop-blur-xl"
           >
-             <div className="w-14 h-14 rounded-xl bg-[#E76F51]/10 border border-[#E76F51]/30 flex items-center justify-center relative overflow-hidden">
+             <div className="w-14 h-14 rounded-xl bg-[#15604E]/10 border border-[#E76F51]/30 flex items-center justify-center relative overflow-hidden">
                 <BrainCircuit className="w-7 h-7 text-[#E76F51] relative z-10" />
                 {/* Rotating background effect */}
                 <motion.div 

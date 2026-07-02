@@ -20,7 +20,7 @@ const CustomTooltip = ({ active, payload, label }) => {
         <p className="font-semibold text-sm mb-1">{label}</p>
         <div className="space-y-1 text-sm">
           <p className="text-[#E76F51] font-medium flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#E76F51]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#15604E]"></span>
             Clarity: {payload[1].value}
           </p>
           <p className="text-gray-500 flex items-center gap-2">
@@ -63,7 +63,7 @@ export default function GrowthChart({ isDark = false }) {
             <span className={isDark ? "text-white/70" : "text-gray-600"}>Without AI</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#E76F51]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#15604E]"></span>
             <span className={isDark ? "text-white" : "text-[#E76F51]"}>With Clarity</span>
           </div>
         </div>

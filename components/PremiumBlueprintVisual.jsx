@@ -8,7 +8,7 @@ export default function PremiumBlueprintVisual() {
   return (
     <div className="relative w-full max-w-sm mx-auto lg:mx-0 mt-12 md:mt-16 mb-4">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#E76F51] rounded-full blur-[80px] opacity-15 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#15604E] rounded-full blur-[80px] opacity-15 pointer-events-none" />
 
       {/* Back Card */}
       <motion.div 
@@ -64,7 +64,7 @@ export default function PremiumBlueprintVisual() {
           </div>
 
           <div className="w-full bg-[#FAF8F3] rounded-2xl p-4 border border-[#DCDCCF] flex flex-col gap-3 relative overflow-hidden">
-             <div className="absolute top-0 bottom-0 left-0 bg-[#E76F51]/5 w-3/4 animate-pulse" />
+             <div className="absolute top-0 bottom-0 left-0 bg-[#15604E]/5 w-3/4 animate-pulse" />
              <div className="flex justify-between items-center relative z-10">
                 <span className="font-bold text-[13px] text-gray-800 tracking-wide uppercase">Workflow Systems</span>
                 <span className="text-xs font-bold text-[#E76F51] italic">Compiling...</span>

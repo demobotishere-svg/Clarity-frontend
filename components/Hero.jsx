@@ -82,8 +82,8 @@ export default function Hero() {
             <div 
                className="absolute top-[50%] right-[-10%] flex items-center justify-center animate-spin-reverse-30"
             >
-              <div className="w-4 h-4 rounded-full bg-[#E76F51]/20 absolute shadow-[0_0_15px_#E76F51]" />
-              <div className="w-2 h-2 rounded-full bg-[#E76F51] shadow-[0_0_15px_#E76F51]" />
+              <div className="w-4 h-4 rounded-full bg-[#15604E]/20 absolute shadow-[0_0_15px_#E76F51]" />
+              <div className="w-2 h-2 rounded-full bg-[#15604E] shadow-[0_0_15px_#E76F51]" />
             </div>
             <div 
                className="absolute bottom-[-5%] left-[10%] flex items-center justify-center animate-spin-reverse-30"
@@ -161,7 +161,7 @@ export default function Hero() {
               <a
                 href="#enrol"
                 data-testid="hero-cta-primary"
-                className="group inline-flex items-center gap-3 bg-[#E76F51] text-white px-7 py-4 rounded-full text-sm md:text-base font-medium hover:bg-[#1B7560] transition-colors duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-3 bg-[#15604E] text-white px-7 py-4 rounded-full text-sm md:text-base font-medium hover:bg-[#1B7560] transition-colors duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
               >
                 Unlock the Blueprint
                 <span className="inline-flex w-7 h-7 rounded-full bg-white/15 items-center justify-center group-hover:translate-x-1 transition-transform">
@@ -202,7 +202,7 @@ export default function Hero() {
                 ].map((t) => (
                   <span key={t} className="flex items-center gap-10">
                     {t}
-                    <span className="inline-block w-1 h-1 rounded-full bg-[#E76F51]"></span>
+                    <span className="inline-block w-1 h-1 rounded-full bg-[#15604E]"></span>
                   </span>
                 ))}
               </div>

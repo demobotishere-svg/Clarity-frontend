@@ -19,7 +19,7 @@ export default function DeployableArchitecture() {
         <h4 className="text-xs md:text-sm font-semibold uppercase tracking-wider text-gray-500">
           The 15-Min Architecture
         </h4>
-        <span className="text-[10px] font-bold tracking-wide uppercase bg-[#E76F51]/10 text-[#E76F51] px-3 py-1.5 rounded-full">
+        <span className="text-[10px] font-bold tracking-wide uppercase bg-[#15604E]/10 text-[#E76F51] px-3 py-1.5 rounded-full">
           Deployable Today
         </span>
       </div>

@@ -43,12 +43,12 @@ export default function ClarityTakeawaysVisual() {
           <div className="px-6 py-5 border-b border-[#DCDCCF] bg-gradient-to-br from-gray-50 to-white flex items-center justify-between">
             <div>
               <p className="text-[10px] font-bold tracking-widest text-[#E76F51] uppercase mb-1.5 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#E76F51] animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-[#15604E] animate-pulse"></span>
                 Instant Delivery
               </p>
               <h3 className="text-xl font-serif text-[#1A1916]">Inside The Blueprint</h3>
             </div>
-            <div className="w-10 h-10 rounded-full bg-[#E76F51]/10 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-full bg-[#15604E]/10 flex items-center justify-center shrink-0">
               <CheckCircle2 className="w-5 h-5 text-[#E76F51]" />
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function ClarityTakeawaysVisual() {
                 transition={{ delay: 0.2 + (0.1 * index), duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="flex items-start gap-4 group"
               >
-                <div className="w-11 h-11 rounded-xl bg-[#FAF8F3] border border-[#DCDCCF]/50 flex items-center justify-center shrink-0 group-hover:bg-[#E76F51]/5 group-hover:border-[#E76F51]/20 transition-all duration-300 shadow-sm">
+                <div className="w-11 h-11 rounded-xl bg-[#FAF8F3] border border-[#DCDCCF]/50 flex items-center justify-center shrink-0 group-hover:bg-[#15604E]/5 group-hover:border-[#E76F51]/20 transition-all duration-300 shadow-sm">
                   <item.icon className="w-5 h-5 text-gray-500 group-hover:text-[#E76F51] transition-colors duration-300" strokeWidth={1.5} />
                 </div>
                 <div>

@@ -8,7 +8,7 @@ export default function BlueprintDrawingVisual() {
   return (
     <div className="w-full max-w-lg mx-auto py-4 lg:py-6">
       {/* Blueprint Container */}
-      <div className="relative w-full aspect-[4/3] bg-[#E76F51] rounded-xl overflow-hidden shadow-2xl p-4 sm:p-6 border-[6px] border-white/50">
+      <div className="relative w-full aspect-[4/3] bg-[#15604E] rounded-xl overflow-hidden shadow-2xl p-4 sm:p-6 border-[6px] border-white/50">
          
          {/* Grid Background */}
          <div 

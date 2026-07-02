@@ -167,7 +167,7 @@ export default function Navbar() {
               href="#enrol"
               onClick={handleCTAClick}
               data-testid="nav-mobile-cta"
-              className="mt-6 inline-flex items-center justify-center gap-2 bg-[#E76F51] text-white px-6 py-4 rounded-full text-sm font-medium button-sweep-effect w-full shadow-lg hover:bg-[#1B7560] transition-colors duration-300"
+              className="mt-6 inline-flex items-center justify-center gap-2 bg-[#15604E] text-white px-6 py-4 rounded-full text-sm font-medium button-sweep-effect w-full shadow-lg hover:bg-[#1B7560] transition-colors duration-300"
             >
               Unlock Access <ArrowUpRight className="w-4 h-4" />
             </motion.a>
@@ -222,7 +222,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-active-line"
-                      className="absolute bottom-1 left-4 right-4 h-[2px] bg-[#E76F51] rounded-full z-20"
+                      className="absolute bottom-1 left-4 right-4 h-[2px] bg-[#15604E] rounded-full z-20"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -237,7 +237,7 @@ export default function Navbar() {
             href="#enrol"
             onClick={handleCTAClick}
             data-testid="nav-cta-button"
-            className="hidden md:inline-flex items-center gap-2 bg-[#E76F51] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1B7560] transition-colors duration-300 button-sweep-effect shrink-0 shadow-sm hover:shadow"
+            className="hidden md:inline-flex items-center gap-2 bg-[#15604E] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1B7560] transition-colors duration-300 button-sweep-effect shrink-0 shadow-sm hover:shadow"
           >
             Unlock Access
             <ArrowUpRight className="w-4 h-4" />

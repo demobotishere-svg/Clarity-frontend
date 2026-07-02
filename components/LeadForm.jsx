@@ -96,7 +96,7 @@ export default function LeadForm({
         {layout === "centered" ? (
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto relative z-10">
             <motion.div {...textAnimation} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
-              <div className={`inline-block font-mono text-[11px] md:text-sm font-extrabold uppercase tracking-[0.25em] px-3 py-1 rounded-full mb-5 ${isDark ? "bg-white/5 border border-white/10 text-white/90" : "bg-[#E76F51]/10 text-[#E76F51]"}`}>
+              <div className={`inline-block font-mono text-[11px] md:text-sm font-extrabold uppercase tracking-[0.25em] px-3 py-1 rounded-full mb-5 ${isDark ? "bg-white/5 border border-white/10 text-white/90" : "bg-[#15604E]/10 text-[#E76F51]"}`}>
                 {preTitle}
               </div>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight">
@@ -234,7 +234,7 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
               type="submit"
               disabled={submitting}
               className={`w-full group relative flex items-center justify-center gap-2 px-6 py-4 md:py-4 rounded-2xl font-semibold text-xl text-white transition-all overflow-hidden mt-4 ${
-                submitting ? "bg-gray-500 cursor-not-allowed" : "bg-[#E76F51] hover:bg-[#21867a]"
+                submitting ? "bg-gray-500 cursor-not-allowed" : "bg-[#15604E] hover:bg-[#21867a]"
               }`}
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -257,7 +257,7 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
             isDark ? "bg-[#1a1a1a] border-white/10" : "bg-white border-[#DCDCCF]"
           }`}
         >
-          <div className="w-16 h-16 bg-[#E76F51]/10 text-[#E76F51] rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-[#15604E]/10 text-[#E76F51] rounded-full flex items-center justify-center mx-auto mb-6">
             <Check className="w-8 h-8" />
           </div>
           <h3 className="font-serif text-2xl mb-2">Blueprint Unlocked</h3>

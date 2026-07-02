@@ -78,7 +78,7 @@ export default function Comparison() {
               <span className="italic text-[#FAF8F3]/70">1 person + AI</span> ={" "}
               <span className="relative inline-block mt-1">
                 total powerhouse
-                <span className="absolute left-0 -bottom-2 h-[3px] md:h-[4px] w-full bg-[#E76F51] rounded-full" />
+                <span className="absolute left-0 -bottom-2 h-[3px] md:h-[4px] w-full bg-[#15604E] rounded-full" />
               </span>
               .
             </h2>
@@ -185,7 +185,7 @@ export default function Comparison() {
             <div className="relative z-10">
               <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#E76F51]">
                 The AI-Native System{" "}
-                <span className="inline-flex items-center ml-2 px-3 py-1 rounded-md bg-[#E76F51] text-white font-bold text-xs uppercase tracking-widest shadow-sm">
+                <span className="inline-flex items-center ml-2 px-3 py-1 rounded-md bg-[#15604E] text-white font-bold text-xs uppercase tracking-widest shadow-sm">
                   what you become
                 </span>
               </div>
@@ -224,7 +224,7 @@ export default function Comparison() {
                 ))}
               </div>
               <div className="mt-10 inline-flex items-center gap-2 font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#E76F51]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E76F51] pulse-dot" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#15604E] pulse-dot" />
                 Output: rested you, scaled
               </div>
             </div>

@@ -42,7 +42,7 @@ export default function TimerToSystemVisual() {
           transition={{ delay: 0.3 }}
           className="relative z-10 bg-[#1A1916] px-4 -translate-y-4"
         >
-           <div className="w-10 h-10 rounded-full bg-[#E76F51]/10 flex items-center justify-center border border-[#E76F51]/30">
+           <div className="w-10 h-10 rounded-full bg-[#15604E]/10 flex items-center justify-center border border-[#E76F51]/30">
                <Zap className="w-4 h-4 text-[#E76F51]" />
            </div>
         </motion.div>
@@ -56,14 +56,14 @@ export default function TimerToSystemVisual() {
           className="relative z-10 flex flex-col items-center"
         >
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#111111] border border-[#E76F51]/40 flex items-center justify-center shadow-[0_0_50px_rgba(21,96,78,0.2)] relative overflow-hidden group backdrop-blur-sm">
-             <div className="absolute inset-0 bg-[#E76F51]/10 group-hover:bg-[#E76F51]/20 transition-colors" />
+             <div className="absolute inset-0 bg-[#15604E]/10 group-hover:bg-[#15604E]/20 transition-colors" />
              <Network className="w-8 h-8 sm:w-10 sm:h-10 text-[#E76F51]" />
              
              {/* Glowing pulse */}
              <motion.div
                 animate={{ scale: [1, 1.6], opacity: [0.4, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
-                className="absolute inset-0 rounded-full bg-[#E76F51] z-[-1]"
+                className="absolute inset-0 rounded-full bg-[#15604E] z-[-1]"
              />
           </div>
           <span className="mt-5 font-mono text-[10px] sm:text-xs text-[#E76F51] uppercase tracking-[0.2em] font-bold">Live System</span>
