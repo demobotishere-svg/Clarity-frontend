@@ -30,8 +30,8 @@ export default function About() {
           >
             <div className="relative rounded-3xl overflow-hidden bg-[#EAEAE6] aspect-[4/5] border border-[#DCDCCF]">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
-                alt="Instructor"
+                src="/yogesh-instructor.jpeg"
+                alt="Yogesh Parthasarathy"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1916]/40 via-transparent"></div>
@@ -39,7 +39,7 @@ export default function About() {
                 <div className="font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-[#FAF8F3]/70">
                   Instructor
                 </div>
-                <div className="font-serif text-3xl mt-1">Ships AI, not slides.</div>
+                <div className="font-serif text-3xl mt-1">Yogesh Parthasarathy</div>
               </div>
             </div>
           </motion.div>
