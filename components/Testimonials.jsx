@@ -400,7 +400,7 @@ export default function Testimonials() {
   return (
     <section 
       id="proof"
-      className="relative py-12 md:py-20 bg-[#FAF8F3] text-[#1A1916] overflow-hidden"
+      className="relative pt-12 md:pt-20 pb-0 bg-[#FAF8F3] text-[#1A1916] overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         

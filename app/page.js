@@ -10,11 +10,13 @@ import ScrollProgress from "@/components/ScrollProgress";
 import GridBackground from "@/components/GridBackground";
 import ScrollReveal from "@/components/ScrollReveal";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import GrowthChart from "@/components/GrowthChart";
 
 // Dynamically import heavy components to prevent blocking the main thread on initial load
 const LeadForm = dynamic(() => import("@/components/LeadForm"));
 const Comparison = dynamic(() => import("@/components/Comparison"));
 const Architect = dynamic(() => import("@/components/Architect"));
+const PremiumBlueprintVisual = dynamic(() => import("@/components/PremiumBlueprintVisual"));
 const Audience = dynamic(() => import("@/components/Audience"));
 const About = dynamic(() => import("@/components/About"));
 const Testimonials = dynamic(() => import("@/components/Testimonials"));
@@ -25,6 +27,9 @@ const FeaturesGrid = dynamic(() => import("@/components/FeaturesGrid"));
 const Curriculum = dynamic(() => import("@/components/Curriculum"));
 const ProgramComparison = dynamic(() => import("@/components/ProgramComparison"));
 const LeaderQuotes = dynamic(() => import("@/components/LeaderQuotes"));
+const WorkflowMapVisual = dynamic(() => import("@/components/WorkflowMapVisual"));
+const TimeSavingsVisual = dynamic(() => import("@/components/TimeSavingsVisual"));
+const WhatsAppDeliveryVisual = dynamic(() => import("@/components/WhatsAppDeliveryVisual"));
 
 export default function Home() {
   return (
@@ -47,16 +52,17 @@ export default function Home() {
           <LeadForm 
             variant="primary" 
             testIdSuffix="1" 
-            layout="split-reverse"
+            layout="standard"
             padding="py-12 md:py-16"
-            preTitle="YOUR 15-MINUTE UNFAIR ADVANTAGE"
-            formTitle="Ready to future-proof"
-            formTitleHighlight="your career?"
-            title="15 minutes of pure"
-            titleHighlight="signal."
-            description="Stop consuming generic AI content. Get the exact architectural blueprint to build an autonomous, AI-Native system. A 15-minute high-density breakdown that will permanently change how you work."
+            preTitle="EXPONENTIAL CAREER GROWTH"
+            formTitle="Ready to accelerate"
+            formTitleHighlight="your growth?"
+            title="Scale your impact"
+            titleHighlight="without scaling your hours."
+            description="The AI paradigm doesn't just improve efficiency—it changes the trajectory of your career. See exactly how Clarity alumni are achieving non-linear growth."
             features={["15-Min tactical breakdown", "Deployable architecture", "Instant WhatsApp access"]}
-            buttonText="Send My Free Blueprint Now"
+            buttonText="Unlock Growth Blueprint"
+            visualComponent={<GrowthChart />}
           />
         </section>
 
@@ -77,14 +83,15 @@ export default function Home() {
             variant="primary" 
             testIdSuffix="3" 
             layout="standard"
-            preTitle="PURE SIGNAL. ZERO NOISE."
-            formTitle="Ready for"
-            formTitleHighlight="your AI transformation?"
-            title="15 minutes can"
-            titleHighlight="transform you."
-            description="We compressed 6 years of AI production experience into a 15-minute tactical breakdown. You will leave with a deployable architecture."
-            features={["6 years of experience", "Zero fluff allowed", "Actionable right away"]}
-            buttonText="Start your transformation"
+            preTitle="THE MASTERCLASS BLUEPRINT"
+            formTitle="Ready to engineer"
+            formTitleHighlight="your unfair advantage?"
+            title="We compressed 6 years into"
+            titleHighlight="15 tactical minutes."
+            description="Stop endlessly scrolling through generic AI advice. We have stripped away the fluff to hand you the exact architectural blueprint used by top-tier tech executives to automate their entire workflow."
+            features={["Zero generic prompt templates", "100% production-ready systems", "Instant WhatsApp delivery"]}
+            buttonText="Unlock the Architecture"
+            visualComponent={<PremiumBlueprintVisual />}
           />
         </section>
 
@@ -112,7 +119,7 @@ export default function Home() {
           <LeadForm 
             variant="secondary" 
             testIdSuffix="2" 
-            layout="centered"
+            layout="standard"
             preTitle="THE 15-MINUTE SYSTEM BUILDER"
             formTitle="Ready to build"
             formTitleHighlight="your first AI system?"
@@ -121,6 +128,7 @@ export default function Home() {
             description="Watch the exact blueprint our students used to reclaim 20+ hours a week. No fluff, just practical execution."
             features={["No coding required", "100% practical workflows", "Step-by-step guidance"]}
             buttonText="Unlock the system builder"
+            visualComponent={<WorkflowMapVisual />}
           />
         </section>
 
@@ -146,6 +154,7 @@ export default function Home() {
             description="Most people spend weeks trying to learn AI. You just need 15 minutes to see how to actually build and deploy autonomous workflows."
             features={["Skip the learning curve", "Build autonomous workflows", "Direct to WhatsApp"]}
             buttonText="Get the 15-min blueprint"
+            visualComponent={<TimeSavingsVisual />}
           />
         </section>
 
@@ -168,6 +177,7 @@ export default function Home() {
             description="The paradigm is shifting. Enter your details to get the 15-minute breakdown delivered straight to your WhatsApp."
             features={["Zero commitment", "Instant WhatsApp delivery", "15-minute blueprint"]}
             buttonText="Unlock the 15-min blueprint"
+            visualComponent={<WhatsAppDeliveryVisual />}
           />
         </section>
 

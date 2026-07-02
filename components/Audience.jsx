@@ -69,7 +69,7 @@ export default function Audience() {
   return (
     <section
       data-testid="audience-section"
-      className="relative py-24 md:py-36 border-t border-[#DCDCCF] bg-[#FAF8F3]"
+      className="relative py-16 md:py-20 border-t border-[#DCDCCF] bg-[#FAF8F3]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <motion.div

@@ -21,7 +21,8 @@ export default function LeadForm({
   layout = "standard", // standard, centered, split-reverse
   formTitle = "Ready to take",
   formTitleHighlight = "the next step?",
-  padding = "py-16 md:py-20"
+  padding = "py-16 md:py-20",
+  visualComponent = null
 }) {
   const [name, setName] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -93,7 +94,7 @@ export default function LeadForm({
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         
         {layout === "centered" ? (
-          <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto relative z-10">
             <motion.div {...textAnimation} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
               <div className={`inline-block font-mono text-[11px] md:text-sm font-extrabold uppercase tracking-[0.25em] px-3 py-1 rounded-full mb-5 ${isDark ? "bg-white/5 border border-white/10 text-white/90" : "bg-[#15604E]/10 text-[#15604E]"}`}>
                 {preTitle}
@@ -109,16 +110,28 @@ export default function LeadForm({
               </p>
             </motion.div>
             
-            <motion.div {...formAnimation} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }} className="w-full max-w-md mt-12">
+            {visualComponent && (
+              <motion.div 
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 0.8, delay: 0.1 }}
+                 className="w-full mt-10 mb-2 relative z-0"
+              >
+                 {visualComponent}
+              </motion.div>
+            )}
+
+            <motion.div {...formAnimation} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }} className="w-full max-w-md mt-10 relative z-20">
               <FormBox done={done} onSubmit={onSubmit} name={name} setName={setName} whatsapp={whatsapp} setWhatsapp={setWhatsapp} submitting={submitting} isDark={isDark} buttonText={buttonText} formTitle={formTitle} formTitleHighlight={formTitleHighlight} />
             </motion.div>
           </div>
         ) : (
-          <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center ${layout === "split-reverse" ? "lg:flex-row-reverse" : ""}`}>
+          <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start ${layout === "split-reverse" ? "lg:flex-row-reverse" : ""}`}>
             
             <motion.div 
               {...textAnimation} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className={`lg:col-span-7 ${layout === "split-reverse" ? "lg:order-2" : ""}`}
+              className={`lg:col-span-6 xl:col-span-6 ${layout === "split-reverse" ? "lg:order-2" : ""}`}
             >
               <div className={`font-mono text-sm md:text-base font-extrabold uppercase tracking-[0.25em] ${isDark ? "text-[#15604E]" : "text-[#15604E]"}`}>
                 {preTitle}
@@ -140,13 +153,20 @@ export default function LeadForm({
                   </li>
                 ))}
               </ul>
+              {visualComponent && (
+                <div className="mt-8 lg:mt-10">
+                  {visualComponent}
+                </div>
+              )}
             </motion.div>
 
             <motion.div 
               {...formAnimation} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className={`lg:col-span-5 ${layout === "split-reverse" ? "lg:order-1" : ""}`}
+              className={`lg:col-span-6 xl:col-span-6 lg:sticky lg:top-32 ${layout === "split-reverse" ? "lg:order-1" : ""}`}
             >
-              <FormBox done={done} onSubmit={onSubmit} name={name} setName={setName} whatsapp={whatsapp} setWhatsapp={setWhatsapp} submitting={submitting} isDark={isDark} buttonText={buttonText} formTitle={formTitle} formTitleHighlight={formTitleHighlight} />
+              <div className="w-full max-w-[680px] mx-auto lg:mx-0 lg:ml-auto">
+                <FormBox done={done} onSubmit={onSubmit} name={name} setName={setName} whatsapp={whatsapp} setWhatsapp={setWhatsapp} submitting={submitting} isDark={isDark} buttonText={buttonText} formTitle={formTitle} formTitleHighlight={formTitleHighlight} />
+              </div>
             </motion.div>
 
           </div>
@@ -165,15 +185,15 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
           onSubmit={onSubmit}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          className={`relative rounded-3xl p-6 md:p-8 border shadow-xl ${
+          className={`relative w-full rounded-[2rem] p-8 md:p-10 lg:p-12 border shadow-2xl ${
             isDark
               ? "bg-[#0a0a0a]/80 backdrop-blur-xl border-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)]"
               : "bg-white border-[#DCDCCF] ring-glow"
           }`}
         >
-          <div className="space-y-4">
+          <div className="space-y-5">
             {(formTitle || formTitleHighlight) && (
-              <h4 className={`font-serif text-xl md:text-2xl leading-tight tracking-tight mb-5 text-center ${isDark ? "text-[#FAF8F3]" : "text-[#1A1916]"}`}>
+              <h4 className={`font-serif text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight mb-6 text-center ${isDark ? "text-[#FAF8F3]" : "text-[#1A1916]"}`}>
                 {formTitle}{" "}
                 {formTitleHighlight && (
                   <span className={`italic ${isDark ? "text-white/70" : "text-[#15604E]"}`}>
@@ -189,7 +209,7 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Name"
-                className={`w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#15604E]/50 transition-all ${
+                className={`w-full px-6 py-3.5 md:py-4 text-lg md:text-xl rounded-2xl border focus:outline-none focus:ring-2 focus:ring-[#15604E]/50 transition-all ${
                   isDark
                     ? "bg-white/5 border-white/10 text-white placeholder-white/40 focus:border-white/20"
                     : "bg-black/5 border-black/10 text-black placeholder-black/20"
@@ -203,7 +223,7 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
                 value={whatsapp}
                 onChange={(e) => setWhatsapp(e.target.value)}
                 placeholder="WhatsApp Number"
-                className={`w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-[#15604E]/50 transition-all ${
+                className={`w-full px-6 py-3.5 md:py-4 text-lg md:text-xl rounded-2xl border focus:outline-none focus:ring-2 focus:ring-[#15604E]/50 transition-all ${
                   isDark
                     ? "bg-white/5 border-white/10 text-white placeholder-white/40 focus:border-white/20"
                     : "bg-black/5 border-black/10 text-black placeholder-black/20"
@@ -213,7 +233,7 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
             <button
               type="submit"
               disabled={submitting}
-              className={`w-full group relative flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-medium text-white transition-all overflow-hidden ${
+              className={`w-full group relative flex items-center justify-center gap-2 px-6 py-4 md:py-4 rounded-2xl font-semibold text-xl text-white transition-all overflow-hidden mt-4 ${
                 submitting ? "bg-gray-500 cursor-not-allowed" : "bg-[#15604E] hover:bg-[#21867a]"
               }`}
             >
@@ -222,6 +242,10 @@ function FormBox({ done, onSubmit, name, setName, whatsapp, setWhatsapp, submitt
                 {!submitting && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
               </span>
             </button>
+            <p className={`text-center text-xs md:text-sm font-medium ${isDark ? 'text-white/40' : 'text-[#666666]/70'} pt-2`}>
+              <Lock className="w-3.5 h-3.5 inline-block mr-1.5 -translate-y-[1px]" />
+              Secure delivery to your WhatsApp
+            </p>
           </div>
         </motion.form>
       ) : (

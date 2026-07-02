@@ -5,10 +5,12 @@ import { Shield, Zap, Award } from "lucide-react";
 
 function CertificateMockup() {
   return (
-    <div className="@container w-full bg-[#2C303A] p-[2.5cqi] shadow-[0_30px_60px_rgba(0,0,0,0.2)] aspect-[1.4/1] flex flex-col">
+    <div className="@container w-full bg-[#1A1916] p-3 sm:p-4 md:p-5 shadow-[0_20px_40px_rgba(0,0,0,0.15)] aspect-[1.414/1] flex flex-col relative rounded-sm">
+      {/* Frame Inner Shadow */}
+      <div className="absolute inset-0 shadow-[inset_0_0_12px_rgba(0,0,0,0.8)] pointer-events-none rounded-sm" />
       
       {/* Inner Canvas */}
-      <div className="w-full h-full bg-[#FCFAEF] p-[1.5cqi] relative shadow-[inset_0_0_20px_rgba(0,0,0,0.05)] flex flex-col">
+      <div className="w-full h-full bg-[#FCFAEF] p-[1.5cqi] relative shadow-inner flex flex-col border-[0.5px] border-[#DCDCCF]">
         
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
@@ -24,7 +26,7 @@ function CertificateMockup() {
         </div>
 
         {/* Border Container that perfectly wraps content */}
-        <div className="w-full h-full border-[1px] border-[#2C303A]/30 flex flex-col justify-between p-[5cqi] relative z-10 overflow-hidden">
+        <div className="w-full h-full border-[1.5px] border-[#1A1916]/10 flex flex-col justify-between p-[4cqi] relative z-10 overflow-hidden bg-white/40">
           
           {/* Top Row: Logo & Meta */}
           <div className="flex justify-between items-start w-full">
@@ -111,15 +113,15 @@ export default function Curriculum() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left Column: Certificate Mockup */}
-          <div className="w-full relative group">
+          <div className="w-full max-w-lg mx-auto lg:max-w-none relative group order-2 lg:order-1 mt-8 lg:mt-0">
             <div className="absolute -inset-4 bg-[#15604E]/10 blur-2xl rounded-[3rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             <CertificateMockup />
           </div>
 
           {/* Right Column: Information/Benefits */}
-          <div className="flex flex-col gap-8 lg:gap-12">
+          <div className="flex flex-col gap-8 lg:gap-12 order-1 lg:order-2">
             
-             <div>
+             <div className="text-center lg:text-left">
                <h3 className="font-serif text-3xl md:text-4xl text-[#1A1916] font-bold mb-4">We don't do participation trophies.</h3>
                <p className="text-lg text-[#666666] leading-relaxed">
                  The Clarity certification isn't awarded for watching videos. It is exclusively given to individuals who have successfully built, tested, and deployed a live autonomous AI system.
