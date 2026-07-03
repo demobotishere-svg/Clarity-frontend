@@ -31,11 +31,10 @@ function CertificateMockup() {
           {/* Top Row: Logo & Meta */}
           <div className="flex justify-between items-start w-full">
             {/* Top Left: Logo */}
-            <div className="flex items-center gap-[1.5cqi]">
-               <div className="w-[3.5cqi] h-[3.5cqi] bg-[#2C303A] rounded-sm flex items-center justify-center relative overflow-hidden shrink-0">
-                  <div className="absolute -right-[0.5cqi] -top-[0.5cqi] w-[1.5cqi] h-[1.5cqi] bg-[#FCFAEF] rounded-full"></div>
-               </div>
-               <span className="font-sans text-[1.8cqi] font-bold text-[#2C303A] tracking-[0.15em] uppercase mt-[0.5cqi]">Clarity</span>
+            <div className="flex items-center">
+               <span className="font-serif text-[2.8cqi] italic leading-none text-[#2C303A]">
+                 Clarity<span className="text-[#E76F51]">.</span>
+               </span>
             </div>
 
             {/* Top Right: Meta */}
