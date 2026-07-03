@@ -282,14 +282,14 @@ export default function ClientTable({ leads, totalPages, currentPage, totalCount
                     </span>
                   </td>
                   <td className="p-4">
-                    {lead.assessment?.score !== null ? (
+                    {typeof lead.assessment?.score === 'number' ? (
                       <span className="font-bold text-slate-800">{lead.assessment.score}/100</span>
                     ) : (
                       <span className="text-slate-400">-</span>
                     )}
                   </td>
                   <td className="p-4">
-                    {lead.assessment?.score !== null ? (
+                    {typeof lead.assessment?.score === 'number' ? (
                       lead.assessment.score >= 80 ? (
                         <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-md">HIGH</span>
                       ) : lead.assessment.score >= 50 ? (
