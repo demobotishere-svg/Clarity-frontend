@@ -5,10 +5,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const NAV = [
-  { label: "Clarity", href: "#clarity" },
-  { label: "Outcomes", href: "#outcomes" },
-  { label: "Testimonials", href: "#proof" },
-  { label: "About Me", href: "#about" }
+  { label: "Clarity", href: "/#clarity" },
+  { label: "Outcomes", href: "/#outcomes" },
+  { label: "Testimonials", href: "/#proof" },
+  { label: "About Me", href: "/#about" }
 ];
 
 export default function Navbar() {
@@ -81,7 +81,7 @@ export default function Navbar() {
     e.preventDefault();
     const forms = Array.from(document.querySelectorAll('[data-testid^="lead-section-"]'));
     if (forms.length === 0) {
-      window.location.hash = "#enrol";
+      window.location.href = "/#enrol";
       setOpen(false);
       return;
     }
@@ -134,7 +134,7 @@ export default function Navbar() {
               className="flex flex-col gap-1 flex-1"
             >
               {NAV.map((item) => {
-                const isActive = activeSection === item.href.slice(1);
+                const isActive = activeSection === item.href.split('#')[1];
                 return (
                   <motion.a
                     key={item.label}
@@ -164,7 +164,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              href="#enrol"
+              href="/#enrol"
               onClick={handleCTAClick}
               data-testid="nav-mobile-cta"
               className="mt-6 inline-flex items-center justify-center gap-2 bg-[#15604E] text-white px-6 py-4 rounded-full text-sm font-medium button-sweep-effect w-full shadow-lg hover:bg-[#1B7560] transition-colors duration-300"
@@ -189,7 +189,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 h-16 md:h-20 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" data-testid="nav-logo" className="flex items-center gap-2 shrink-0">
+          <a href="/" data-testid="nav-logo" className="flex items-center gap-2 shrink-0">
             <span className="font-serif text-2xl md:text-3xl italic leading-none">
               Clarity<span className="text-[#E76F51]">.</span>
             </span>
@@ -201,7 +201,7 @@ export default function Navbar() {
             onMouseLeave={() => setHoveredLabel(null)}
           >
             {NAV.map((item) => {
-              const isActive = activeSection === item.href.slice(1);
+              const isActive = activeSection === item.href.split('#')[1];
               return (
                 <a
                   key={item.label}
@@ -234,7 +234,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <a
-            href="#enrol"
+            href="/#enrol"
             onClick={handleCTAClick}
             data-testid="nav-cta-button"
             className="hidden md:inline-flex items-center gap-2 bg-[#15604E] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1B7560] transition-colors duration-300 button-sweep-effect shrink-0 shadow-sm hover:shadow"
