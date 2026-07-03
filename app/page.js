@@ -11,6 +11,7 @@ import GridBackground from "@/components/GridBackground";
 import ScrollReveal from "@/components/ScrollReveal";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import ClarityTakeawaysVisual from "@/components/ClarityTakeawaysVisual";
+import LazyLoad from "@/components/LazyLoad";
 
 // Dynamically import heavy components to prevent blocking the main thread on initial load
 const LeadForm = dynamic(() => import("@/components/LeadForm"));
@@ -48,140 +49,170 @@ export default function Home() {
         <GridBackground />
         <Hero />
         
-        <section id="enrol" data-testid="lead-section-1" className="border-t border-[#DCDCCF] bg-[#FAF8F3]">
-          <LeadForm 
-            variant="primary" 
-            testIdSuffix="1" 
-            layout="standard"
-            padding="py-12 md:py-16"
-            preTitle="EXPONENTIAL CAREER GROWTH"
-            formTitle="Ready to accelerate"
-            formTitleHighlight="your growth?"
-            title="Scale your impact"
-            titleHighlight="without scaling your hours."
-            description="The AI paradigm doesn't just improve efficiency—it changes the trajectory of your career. See exactly how Clarity alumni are achieving non-linear growth."
-            features={["15-Min tactical breakdown", "Deployable architecture", "Instant WhatsApp access"]}
-            buttonText="Unlock Growth Blueprint"
-            visualComponent={<ClarityTakeawaysVisual />}
-          />
-        </section>
+        <LazyLoad height="400px">
+          <section id="enrol" data-testid="lead-section-1" className="border-t border-[#DCDCCF] bg-[#FAF8F3]">
+            <LeadForm 
+              variant="primary" 
+              testIdSuffix="1" 
+              layout="standard"
+              padding="py-12 md:py-16"
+              preTitle="EXPONENTIAL CAREER GROWTH"
+              formTitle="Ready to accelerate"
+              formTitleHighlight="your growth?"
+              title="Scale your impact"
+              titleHighlight="without scaling your hours."
+              description="The AI paradigm doesn't just improve efficiency—it changes the trajectory of your career. See exactly how Clarity alumni are achieving non-linear growth."
+              features={["15-Min tactical breakdown", "Deployable architecture", "Instant WhatsApp access"]}
+              buttonText="Unlock Growth Blueprint"
+              visualComponent={<ClarityTakeawaysVisual />}
+            />
+          </section>
+        </LazyLoad>
 
-        <ScrollReveal>
-          <Testimonials />
-        </ScrollReveal>
+        <LazyLoad height="600px">
+          <ScrollReveal>
+            <Testimonials />
+          </ScrollReveal>
+        </LazyLoad>
 
-        <ScrollReveal>
-          <Audience />
-        </ScrollReveal>
+        <LazyLoad height="600px">
+          <ScrollReveal>
+            <Audience />
+          </ScrollReveal>
+        </LazyLoad>
 
-        <ScrollReveal>
-          <About />
-        </ScrollReveal>
+        <LazyLoad height="600px">
+          <ScrollReveal>
+            <About />
+          </ScrollReveal>
+        </LazyLoad>
 
-        <section data-testid="lead-section-3" className="border-t border-[#DCDCCF] bg-[#FAF8F3]">
-          <LeadForm 
-            variant="primary" 
-            testIdSuffix="3" 
-            layout="standard"
-            preTitle="THE MASTERCLASS BLUEPRINT"
-            formTitle="Ready to engineer"
-            formTitleHighlight="your unfair advantage?"
-            title="We compressed 6 years into"
-            titleHighlight="15 tactical minutes."
-            description="Stop endlessly scrolling through generic AI advice. We have stripped away the noise to hand you the exact architectural blueprint used by top-tier tech executives to automate their entire workflow."
-            features={["Zero generic prompt templates", "100% production-ready systems", "Instant WhatsApp delivery"]}
-            buttonText="Unlock the Architecture"
-            visualComponent={<PremiumBlueprintVisual />}
-          />
-        </section>
+        <LazyLoad height="500px">
+          <section data-testid="lead-section-3" className="border-t border-[#DCDCCF] bg-[#FAF8F3]">
+            <LeadForm 
+              variant="primary" 
+              testIdSuffix="3" 
+              layout="standard"
+              preTitle="THE MASTERCLASS BLUEPRINT"
+              formTitle="Ready to engineer"
+              formTitleHighlight="your unfair advantage?"
+              title="We compressed 6 years into"
+              titleHighlight="15 tactical minutes."
+              description="Stop endlessly scrolling through generic AI advice. We have stripped away the noise to hand you the exact architectural blueprint used by top-tier tech executives to automate their entire workflow."
+              features={["Zero generic prompt templates", "100% production-ready systems", "Instant WhatsApp delivery"]}
+              buttonText="Unlock the Architecture"
+              visualComponent={<PremiumBlueprintVisual />}
+            />
+          </section>
+        </LazyLoad>
 
-        <ScrollReveal>
-          <FeaturesGrid />
-        </ScrollReveal>
+        <LazyLoad height="800px">
+          <ScrollReveal>
+            <FeaturesGrid />
+          </ScrollReveal>
+        </LazyLoad>
 
-        <ScrollReveal>
-          <Curriculum />
-        </ScrollReveal>
+        <LazyLoad height="800px">
+          <ScrollReveal>
+            <Curriculum />
+          </ScrollReveal>
+        </LazyLoad>
 
-        <ScrollReveal>
-          <ProgramComparison />
-        </ScrollReveal>
+        <LazyLoad height="600px">
+          <ScrollReveal>
+            <ProgramComparison />
+          </ScrollReveal>
+        </LazyLoad>
 
-        <ScrollReveal>
-          <Comparison />
-        </ScrollReveal>
+        <LazyLoad height="600px">
+          <ScrollReveal>
+            <Comparison />
+          </ScrollReveal>
+        </LazyLoad>
 
-        <ScrollReveal>
-          <Architect />
-        </ScrollReveal>
+        <LazyLoad height="600px">
+          <ScrollReveal>
+            <Architect />
+          </ScrollReveal>
+        </LazyLoad>
 
-        <section data-testid="lead-section-2" className="border-t border-[#white/10] bg-[#1A1916]">
-          <LeadForm 
-            variant="secondary" 
-            testIdSuffix="2" 
-            layout="standard"
-            preTitle="THE 15-MINUTE SYSTEM BUILDER"
-            formTitle="Ready to build"
-            formTitleHighlight="your first AI system?"
-            title="Give us 15 minutes."
-            titleHighlight="We'll give you a system."
-            description="Watch the exact blueprint our students used to reclaim 20+ hours a week. Pure, practical execution."
-            features={["No coding required", "100% practical workflows", "Step-by-step guidance"]}
-            buttonText="Unlock the system builder"
-            visualComponent={<WorkflowMapVisual />}
-          />
-        </section>
+        <LazyLoad height="500px">
+          <section data-testid="lead-section-2" className="border-t border-[#white/10] bg-[#1A1916]">
+            <LeadForm 
+              variant="secondary" 
+              testIdSuffix="2" 
+              layout="standard"
+              preTitle="THE 15-MINUTE SYSTEM BUILDER"
+              formTitle="Ready to build"
+              formTitleHighlight="your first AI system?"
+              title="Give us 15 minutes."
+              titleHighlight="We'll give you a system."
+              description="Watch the exact blueprint our students used to reclaim 20+ hours a week. Pure, practical execution."
+              features={["No coding required", "100% practical workflows", "Step-by-step guidance"]}
+              buttonText="Unlock the system builder"
+              visualComponent={<WorkflowMapVisual />}
+            />
+          </section>
+        </LazyLoad>
 
+        <LazyLoad height="600px">
+          <ScrollReveal>
+            <LeaderQuotes />
+          </ScrollReveal>
+        </LazyLoad>
 
+        <LazyLoad height="500px">
+          <section data-testid="lead-section-4" className="border-t border-[#white/10] bg-[#1A1916]">
+            <LeadForm 
+              variant="secondary" 
+              testIdSuffix="4" 
+              layout="split-reverse"
+              preTitle="YOUR 15-MINUTE TRANSFORMATION"
+              formTitle="Ready to claim"
+              formTitleHighlight="your time back?"
+              title="Stop wasting time."
+              titleHighlight="See the blueprint."
+              description="Most people spend weeks trying to learn AI. You just need 15 minutes to see how to actually build and deploy autonomous workflows."
+              features={["Skip the learning curve", "Build autonomous workflows", "Direct to WhatsApp"]}
+              buttonText="Get the 15-min blueprint"
+              visualComponent={<TimeSavingsVisual />}
+            />
+          </section>
+        </LazyLoad>
 
+        <LazyLoad height="600px">
+          <ScrollReveal>
+            <PillChoice />
+          </ScrollReveal>
+        </LazyLoad>
 
+        <LazyLoad height="300px">
+          <FinalCTA />
+        </LazyLoad>
 
+        <LazyLoad height="500px">
+          <section id="lead-form-final" data-testid="lead-section-5" className="border-t border-[#DCDCCF] bg-[#FAF8F3]">
+            <LeadForm 
+              variant="primary" 
+              testIdSuffix="5" 
+              layout="standard"
+              preTitle="THE ARCHITECT'S BLUEPRINT"
+              formTitle="Ready to become"
+              formTitleHighlight="the AI architect?"
+              title="Your final chance to"
+              titleHighlight="take the red pill."
+              description="The paradigm is shifting. Enter your details to get the 15-minute breakdown delivered straight to your WhatsApp."
+              features={["Zero commitment", "Instant WhatsApp delivery", "15-minute blueprint"]}
+              buttonText="Unlock the 15-min blueprint"
+              visualComponent={<WhatsAppDeliveryVisual />}
+            />
+          </section>
+        </LazyLoad>
 
-        <ScrollReveal>
-          <LeaderQuotes />
-        </ScrollReveal>
-
-        <section data-testid="lead-section-4" className="border-t border-[#white/10] bg-[#1A1916]">
-          <LeadForm 
-            variant="secondary" 
-            testIdSuffix="4" 
-            layout="split-reverse"
-            preTitle="YOUR 15-MINUTE TRANSFORMATION"
-            formTitle="Ready to claim"
-            formTitleHighlight="your time back?"
-            title="Stop wasting time."
-            titleHighlight="See the blueprint."
-            description="Most people spend weeks trying to learn AI. You just need 15 minutes to see how to actually build and deploy autonomous workflows."
-            features={["Skip the learning curve", "Build autonomous workflows", "Direct to WhatsApp"]}
-            buttonText="Get the 15-min blueprint"
-            visualComponent={<TimeSavingsVisual />}
-          />
-        </section>
-
-        <ScrollReveal>
-          <PillChoice />
-        </ScrollReveal>
-
-        <FinalCTA />
-
-        <section id="lead-form-final" data-testid="lead-section-5" className="border-t border-[#DCDCCF] bg-[#FAF8F3]">
-          <LeadForm 
-            variant="primary" 
-            testIdSuffix="5" 
-            layout="standard"
-            preTitle="THE ARCHITECT'S BLUEPRINT"
-            formTitle="Ready to become"
-            formTitleHighlight="the AI architect?"
-            title="Your final chance to"
-            titleHighlight="take the red pill."
-            description="The paradigm is shifting. Enter your details to get the 15-minute breakdown delivered straight to your WhatsApp."
-            features={["Zero commitment", "Instant WhatsApp delivery", "15-minute blueprint"]}
-            buttonText="Unlock the 15-min blueprint"
-            visualComponent={<WhatsAppDeliveryVisual />}
-          />
-        </section>
-
-        <Footer />
+        <LazyLoad height="300px">
+          <Footer />
+        </LazyLoad>
+        
         <WhatsAppWidget />
       </motion.div>
     </>

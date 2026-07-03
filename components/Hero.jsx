@@ -38,7 +38,7 @@ export default function Hero() {
     <section
       id="clarity"
       data-testid="hero-section"
-      className="relative pt-20 md:pt-24 pb-4 grain"
+      className="relative pt-20 md:pt-24 pb-4"
     >
       {/* Background Effects Container */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
