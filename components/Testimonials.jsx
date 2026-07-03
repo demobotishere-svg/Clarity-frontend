@@ -225,13 +225,13 @@ function ContentMockup() {
 const CASE_STUDIES = [
   {
     role: "9th Grade Student",
-    name: "Aditi Swaminathan",
+    name: "Advait Swaminathan",
     company: "Seedora Creator",
     built: "Seedora Plant Community App",
     metric: "Built from scratch by a 9th grader.",
     quote: "Seedora: A plant growing community app which encourages students to grow plants and monitor their growth. Built from scratch.",
     graphic: <SeedoraMockup />,
-    image: "/testimonial_1.jpeg"
+    image: "/testimonial_advait.png"
   },
   {
     role: "Marketing Executive",
