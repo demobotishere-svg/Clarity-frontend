@@ -5,7 +5,7 @@ import { Shield, Zap, Award } from "lucide-react";
 
 function CertificateMockup() {
   return (
-    <div className="@container w-full bg-[#1A1916] p-3 sm:p-4 md:p-5 shadow-[0_20px_40px_rgba(0,0,0,0.15)] aspect-[1.414/1] flex flex-col relative rounded-sm">
+    <div className="@container w-full bg-[#1A1916] p-1 sm:p-1.5 md:p-2 shadow-[0_20px_40px_rgba(0,0,0,0.15)] aspect-[1.414/1] flex flex-col relative rounded-sm">
       {/* Frame Inner Shadow */}
       <div className="absolute inset-0 shadow-[inset_0_0_12px_rgba(0,0,0,0.8)] pointer-events-none rounded-sm" />
       
