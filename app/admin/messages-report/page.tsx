@@ -64,7 +64,7 @@ export default async function MessagesReportPage() {
                   </td>
                 </tr>
               )}
-              {batches.map((batch) => (
+              {batches.map((batch: any) => (
                 <tr key={batch.id} className="hover:bg-slate-50 transition-colors">
                   <td className="p-4 text-slate-900 font-medium">{formatDate(batch.createdAt)}</td>
                   <td className="p-4 text-slate-600 font-mono text-sm">

@@ -39,7 +39,7 @@ export default async function BatchDetailsPage({ params }: { params: Promise<{ i
   };
 
   // Prepare data for CSV Export
-  const exportData = rawMessages.map(msg => ({
+  const exportData = rawMessages.map((msg: any) => ({
     LeadName: msg.leadName || "Unknown",
     Phone: msg.leadPhone || "Unknown",
     Template: msg.templateName,
@@ -106,7 +106,7 @@ export default async function BatchDetailsPage({ params }: { params: Promise<{ i
                   </td>
                 </tr>
               )}
-              {rawMessages.map((msg) => (
+              {rawMessages.map((msg: any) => (
                 <tr key={msg.id} className="hover:bg-slate-50 transition-colors">
                   <td className="p-4 text-slate-900 font-medium">{msg.leadName}</td>
                   <td className="p-4 text-slate-600">{msg.leadPhone}</td>
