@@ -122,7 +122,7 @@ export default function Curriculum() {
           <div className="flex flex-col gap-8 lg:gap-12 order-1 lg:order-2">
             
              <div className="text-center lg:text-left">
-               <h3 className="font-serif text-3xl md:text-4xl text-[#1A1916] font-bold mb-4">We don't do participation trophies.</h3>
+               <h3 className="font-serif text-3xl md:text-4xl leading-[1.1] tracking-tight text-[#1A1916] mb-4">We don't do participation trophies.</h3>
                <p className="text-lg text-[#666666] leading-relaxed">
                  The Clarity certification isn't awarded for watching videos. It is exclusively given to individuals who have successfully built, tested, and deployed a live autonomous AI system.
                </p>
