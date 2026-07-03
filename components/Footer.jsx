@@ -15,7 +15,9 @@ const FooterSection = () => {
       <footer id="footer" className="bg-[#1A1916] text-[#FAF8F3] pt-12">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <h2 className="font-serif font-bold text-2xl pb-3 text-white">School of AI</h2>
+            <h2 className="font-serif text-3xl italic pb-4 text-white leading-none">
+              Clarity<span className="text-[#E76F51]">.</span>
+            </h2>
             <p className="text-sm leading-relaxed mb-6 text-white/70">
               Empowering the next generation of <br />
               AI professionals with world-class education.
