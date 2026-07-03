@@ -63,10 +63,10 @@ export default function PillChoice() {
             onHoverEnd={() => setHoveredIndex(null)}
             animate={
               hoveredIndex === 1
-                ? { scale: 0.97, opacity: 0.5, filter: "blur(4px) grayscale(100%)" }
+                ? { scale: 0.97, opacity: 0.5 }
                 : hoveredIndex === 0
-                ? { scale: 1.01, opacity: 1, filter: "blur(0px) grayscale(0%)" }
-                : { scale: 1, opacity: 1, filter: "blur(0px) grayscale(0%)" }
+                ? { scale: 1.01, opacity: 1 }
+                : { scale: 1, opacity: 1 }
             }
             data-testid="blue-pill-card"
             className="relative group overflow-hidden rounded-3xl aspect-[4/5] md:aspect-[3/4] border border-[#DCDCCF] cursor-pointer transition-all duration-[600ms] hover:border-[#3a7bd5]/60 hover:shadow-[0_0_30px_rgba(58,123,213,0.15)]"

@@ -72,9 +72,9 @@ export default function Navbar() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 14, filter: "blur(4px)" },
-    visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } },
-    exit: { opacity: 0, y: -8, filter: "blur(4px)", transition: { duration: 0.2 } }
+    hidden: { opacity: 0, y: 14 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } },
+    exit: { opacity: 0, y: -8, transition: { duration: 0.2 } }
   };
 
   const handleCTAClick = (e) => {
