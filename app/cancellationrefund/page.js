@@ -13,7 +13,7 @@ export default function CancellationRefundPolicy() {
       <Navbar />
       <div className="pt-32 pb-20 bg-[#FAF8F3] min-h-screen text-[#1A1916]">
         <div className="max-w-3xl mx-auto px-6">
-          <h1 className="font-serif text-4xl font-bold mb-2">Cancellation & Refund Policy</h1>
+          <h1 className="font-serif text-4xl md:text-5xl leading-[1.1] tracking-tight text-[#1A1916] mb-2">Cancellation & Refund Policy</h1>
           <p className="text-[#666666] mb-12 text-sm">Last updated: {new Date().toLocaleDateString()}</p>
 
           <div className="space-y-8 text-[#1A1916]/80 leading-relaxed">
