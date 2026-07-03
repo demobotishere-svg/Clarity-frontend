@@ -225,7 +225,7 @@ function ContentMockup() {
 const CASE_STUDIES = [
   {
     role: "9th Grade Student",
-    name: "Advait Swaminathan",
+    name: "Aditi Swaminathan",
     company: "Seedora Creator",
     built: "Seedora Plant Community App",
     metric: "Built from scratch by a 9th grader.",
@@ -255,7 +255,7 @@ const CASE_STUDIES = [
   },
   {
     role: "Local Gym Owner",
-    name: "Meera Iyer",
+    name: "Manoj Iyer",
     company: "Fitness Studio",
     built: "Custom Lead Generation Agent",
     metric: "Handles 100% of Instagram DMs.",
@@ -265,7 +265,7 @@ const CASE_STUDIES = [
   },
   {
     role: "Finance Director",
-    name: "Lakshmi Narayan",
+    name: "Vikram Narayan",
     company: "Global Logistics",
     built: "Automated Invoicing System",
     metric: "Eliminated 20 hours of manual data entry.",
