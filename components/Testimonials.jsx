@@ -474,13 +474,15 @@ export default function Testimonials() {
                 </p>
 
                 <div className="flex items-center gap-3 mt-auto pt-4 border-t border-black/5">
-                  <Image 
-                    src={study.image} 
-                    alt={study.name} 
-                    width={48}
-                    height={48}
-                    className="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full object-cover shadow-sm group-hover:scale-105 transition-transform duration-500 bg-gray-200"
-                  />
+                  <div className="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full overflow-hidden relative shadow-sm">
+                    <Image 
+                      src={study.image} 
+                      alt={study.name} 
+                      fill
+                      sizes="(max-width: 768px) 40px, 48px"
+                      className="object-cover scale-[1.35] group-hover:scale-[1.45] transition-transform duration-500 bg-gray-200"
+                    />
+                  </div>
                   <div className="min-w-0">
                     <div className={`font-medium truncate text-black text-sm`}>{study.name}</div>
                     <div className={`text-[11px] md:text-xs text-wrap leading-tight mt-0.5 text-black/50`}>
