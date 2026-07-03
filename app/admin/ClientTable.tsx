@@ -94,9 +94,11 @@ export default function ClientTable({ leads, totalPages, currentPage, totalCount
         templateName = "utl_assessment_abandoned";
       }
 
-      const res = await fetch("/api/bulk/queue", {
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || (typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:3001` : "http://localhost:3001");
+      const res = await fetch(`${backendUrl}/api/bulk/queue`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({
           leadIds: leads.map(l => l.id),
           templateName
@@ -386,3 +388,4 @@ export default function ClientTable({ leads, totalPages, currentPage, totalCount
     </div>
   );
 }
+

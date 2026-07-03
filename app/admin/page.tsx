@@ -1,9 +1,7 @@
-import { db } from "@/lib/db";
-import { leads, assessments, razorpayPayments } from "@/db/schema";
-import { eq, ilike, and, gte, lte, desc, sql } from "drizzle-orm";
 import ClientTable from "./ClientTable";
 import DataVisualization from "./DataVisualization";
 import { Suspense } from "react";
+import { cookies } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +12,7 @@ export default async function AdminDashboard({
 }) {
   const resolvedParams = await searchParams;
   
-  const page = typeof resolvedParams.page === "string" ? parseInt(resolvedParams.page, 10) : 1;
+  const page = typeof resolvedParams.page === "string" ? resolvedParams.page : "1";
   const search = typeof resolvedParams.search === "string" ? resolvedParams.search : "";
   const status = typeof resolvedParams.status === "string" ? resolvedParams.status : "ALL";
   const priority = typeof resolvedParams.priority === "string" ? resolvedParams.priority : "ALL";
@@ -24,154 +22,40 @@ export default async function AdminDashboard({
   const endDate = typeof resolvedParams.endDate === "string" ? resolvedParams.endDate : "";
   const tab = typeof resolvedParams.tab === "string" ? resolvedParams.tab : "overview";
 
-  const take = 10;
-  const skip = (Math.max(1, page) - 1) * take;
+  const qs = new URLSearchParams({
+    page, search, status, priority, payment, lifecycle, startDate, endDate, tab
+  }).toString();
 
-  const conditions = [];
+  const cookieStore = await cookies();
+  const token = cookieStore.get("admin_token")?.value;
 
-  if (search) {
-    conditions.push(ilike(leads.phone, `%${search}%`));
-  }
-
-  if (status !== "ALL" && tab === 'overview') {
-    conditions.push(eq(assessments.status, status as any));
-  }
-
-  if (priority !== "ALL" && tab === 'overview') {
-    if (priority === "HIGH") {
-      conditions.push(gte(assessments.score, 80));
-    } else if (priority === "MID") {
-      conditions.push(and(gte(assessments.score, 50), lte(assessments.score, 79)));
-    } else if (priority === "LOW") {
-      conditions.push(lte(assessments.score, 49));
-    } else if (priority === "UNSCORED") {
-      conditions.push(sql`${assessments.score} IS NULL`);
-    }
-  }
-
-  if (payment !== "ALL" && tab === 'overview') {
-    if (payment === "PAID") {
-      conditions.push(eq(leads.hasPaid, true));
-    } else if (payment === "UNPAID") {
-      conditions.push(eq(leads.hasPaid, false));
-    }
-  }
-
-  if (tab === 'lifecycle') {
-    // For lifecycle cohorts, strictly filter to only those who have PAID and COMPLETED the assessment
-    conditions.push(eq(leads.hasPaid, true));
-    conditions.push(eq(assessments.status, "COMPLETED"));
-  }
-
-  if (tab === 'payment_abandoned') {
-    // Completed assessment but hasn't paid
-    conditions.push(eq(assessments.status, "COMPLETED"));
-    conditions.push(eq(leads.hasPaid, false));
-  }
-
-  if (tab === 'assessment_abandoned') {
-    // Has not completed the assessment
-    conditions.push(sql`${assessments.status} != 'COMPLETED' OR ${assessments.status} IS NULL`);
-  }
-
-  if (lifecycle !== "ALL" && tab === 'lifecycle') {
-    if (lifecycle === "WEEK_1") {
-      conditions.push(sql`EXTRACT(DAY FROM CURRENT_TIMESTAMP - ${leads.createdAt}) <= 7`);
-    } else if (lifecycle === "WEEK_2") {
-      conditions.push(sql`EXTRACT(DAY FROM CURRENT_TIMESTAMP - ${leads.createdAt}) > 7 AND EXTRACT(DAY FROM CURRENT_TIMESTAMP - ${leads.createdAt}) <= 14`);
-    } else if (lifecycle === "WEEK_3") {
-      conditions.push(sql`EXTRACT(DAY FROM CURRENT_TIMESTAMP - ${leads.createdAt}) > 14 AND EXTRACT(DAY FROM CURRENT_TIMESTAMP - ${leads.createdAt}) <= 21`);
-    } else if (lifecycle === "WEEK_4") {
-      conditions.push(sql`EXTRACT(DAY FROM CURRENT_TIMESTAMP - ${leads.createdAt}) > 21 AND EXTRACT(DAY FROM CURRENT_TIMESTAMP - ${leads.createdAt}) <= 28`);
-    } else if (lifecycle === "EXPIRED") {
-      conditions.push(sql`EXTRACT(DAY FROM CURRENT_TIMESTAMP - ${leads.createdAt}) > 28`);
-    }
-  }
-
-  if (startDate) {
-    conditions.push(gte(leads.updatedAt, new Date(`${startDate}T00:00:00.000Z`)));
-  }
-  if (endDate) {
-    conditions.push(lte(leads.updatedAt, new Date(`${endDate}T23:59:59.999Z`)));
-  }
-
-  const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
-
-  // Execute Count
-  const countResult = await db.select({ count: sql<number>`cast(count(${leads.id}) as int)` })
-    .from(leads)
-    .leftJoin(assessments, eq(leads.id, assessments.leadId))
-    .where(whereClause);
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
   
-  const totalCount = countResult[0].count;
+  const res = await fetch(`${backendUrl}/api/leads/dashboard?${qs}`, {
+    headers: {
+      Cookie: token ? `admin_token=${token}` : ""
+    },
+    cache: "no-store"
+  });
 
-  // Execute Fetch
-  const fetchedData = await db.select()
-    .from(leads)
-    .leftJoin(assessments, eq(leads.id, assessments.leadId))
-    .where(whereClause)
-    .orderBy(desc(leads.updatedAt))
-    .limit(take)
-    .offset(skip);
+  if (!res.ok) {
+    return (
+      <div className="p-8 text-center text-red-500">
+        Failed to fetch dashboard data. Make sure the backend is running.
+        <br />Error: {await res.text()}
+      </div>
+    );
+  }
 
-  // Re-map data to match the old Prisma nested structure { ...lead, assessment: { ... } }
-  const leadsFormatted = fetchedData.map(row => ({
-    ...row.Lead,
-    assessment: row.Assessment
-  }));
-
-  const totalPages = Math.max(1, Math.ceil(totalCount / take));
-
-  // Build Analytics Data (Scalable SQL Aggregations)
-  const totalLeadsResult = await db.select({ count: sql<number>`cast(count(${leads.id}) as int)` }).from(leads);
-  const totalAssessmentsResult = await db.select({ count: sql<number>`cast(count(${assessments.id}) as int)` })
-    .from(assessments).where(eq(assessments.status, "COMPLETED"));
-  const totalRevenueResult = await db.select({ sum: sql<number>`cast(sum(${razorpayPayments.amount}) as int)` })
-    .from(razorpayPayments).where(eq(razorpayPayments.status, "captured"));
-  
-  const metrics = {
-    totalLeads: totalLeadsResult[0]?.count || 0,
-    completedAssessments: totalAssessmentsResult[0]?.count || 0,
-    totalRevenue: totalRevenueResult[0]?.sum || 0
-  };
-
-  // Group leads by date directly in SQL
-  // NOTE: Postgres date_trunc('day', ...) works perfectly for this
-  const rawLeadsByDate = await db.execute(sql`
-    SELECT date_trunc('day', "createdAt")::date as date, cast(count(id) as int) as count 
-    FROM "Lead" 
-    GROUP BY date_trunc('day', "createdAt") 
-    ORDER BY date ASC
-  `);
-
-  const leadsByDate = rawLeadsByDate.rows.map(row => ({
-    date: new Date(row.date as string).toISOString().split('T')[0],
-    count: row.count as number
-  }));
-
-  // Group assessment statuses directly in SQL
-  const rawStatuses = await db.execute(sql`
-    SELECT status, cast(count(id) as int) as value 
-    FROM "Assessment" 
-    GROUP BY status
-  `);
-
-  const assessmentStatuses = rawStatuses.rows.map(row => ({
-    name: String(row.status).replace("_", " "),
-    value: row.value as number
-  })).filter(s => s.value > 0);
-
-  // Group payment statuses directly in SQL
-  const rawPayments = await db.execute(sql`
-    SELECT "hasPaid", cast(count(id) as int) as value 
-    FROM "Lead" 
-    GROUP BY "hasPaid"
-  `);
-
-  const paymentStatuses = rawPayments.rows.map(row => ({
-    name: row.hasPaid ? "PAID" : "UNPAID",
-    value: row.value as number
-  }));
+  const {
+    leadsFormatted,
+    totalCount,
+    totalPages,
+    metrics,
+    leadsByDate,
+    assessmentStatuses,
+    paymentStatuses
+  } = await res.json();
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -206,7 +90,7 @@ export default async function AdminDashboard({
         <ClientTable 
           leads={leadsFormatted} 
           totalPages={totalPages} 
-          currentPage={page} 
+          currentPage={parseInt(page, 10)} 
           totalCount={totalCount} 
           activeTab={tab}
         />

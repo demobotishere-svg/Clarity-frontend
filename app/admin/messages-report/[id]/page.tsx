@@ -1,6 +1,4 @@
-import { db } from "@/lib/db";
-import { pendingMessages, leads, bulkBatches } from "@/db/schema";
-import { eq, desc } from "drizzle-orm";
+import { cookies } from "next/headers";
 import Link from "next/link";
 import ExportButton from "@/app/admin/ExportButton";
 
@@ -9,28 +7,24 @@ export const dynamic = "force-dynamic";
 export default async function BatchDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
   const batchId = resolvedParams.id;
+  
+  const cookieStore = await cookies();
+  const token = cookieStore.get("admin_token")?.value;
 
-  const batchResult = await db.select().from(bulkBatches).where(eq(bulkBatches.id, batchId));
-  const batch = batchResult[0];
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
+  
+  const res = await fetch(`${backendUrl}/api/bulk/reports/${batchId}`, {
+    headers: {
+      Cookie: `admin_token=${token}`
+    },
+    cache: "no-store"
+  });
 
-  if (!batch) {
-    return <div className="p-8 text-center">Batch not found.</div>;
+  if (!res.ok) {
+    return <div className="p-8 text-center text-rose-500">Batch not found or error.</div>;
   }
 
-  const rawMessages = await db.select({
-    id: pendingMessages.id,
-    templateName: pendingMessages.templateName,
-    status: pendingMessages.status,
-    errorReason: pendingMessages.errorReason,
-    createdAt: pendingMessages.createdAt,
-    processedAt: pendingMessages.processedAt,
-    leadName: leads.name,
-    leadPhone: leads.phone,
-  })
-  .from(pendingMessages)
-  .leftJoin(leads, eq(pendingMessages.leadId, leads.id))
-  .where(eq(pendingMessages.batchId, batchId))
-  .orderBy(desc(pendingMessages.createdAt));
+  const { batch, messages: rawMessages } = await res.json();
 
   const formatDate = (dateString?: Date | null) => {
     if (!dateString) return "-";

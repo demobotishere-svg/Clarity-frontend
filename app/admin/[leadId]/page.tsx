@@ -1,6 +1,4 @@
-import { db } from "@/lib/db";
-import { leads } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { cookies } from "next/headers";
 import Link from "next/link";
 import ChatTranscript from "./ChatTranscript";
 import ActivityLogFeed from "./ActivityLogFeed";
@@ -11,21 +9,24 @@ export const dynamic = "force-dynamic";
 export default async function LeadProfile({ params }: { params: Promise<{ leadId: string }> }) {
   const { leadId } = await params;
   
-  const lead = await db.query.leads.findFirst({
-    where: eq(leads.id, leadId),
-    with: {
-      activityLogs: {
-        orderBy: (logs, { asc }) => [asc(logs.createdAt)]
-      },
-      assessment: {
-        with: {
-          messages: {
-            orderBy: (msgs, { asc }) => [asc(msgs.createdAt)]
-          }
-        }
-      }
-    }
+  const cookieStore = await cookies();
+  const token = cookieStore.get("admin_token")?.value;
+
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
+  
+  const res = await fetch(`${backendUrl}/api/leads/${leadId}`, {
+    headers: {
+      Cookie: `admin_token=${token}`
+    },
+    cache: "no-store"
   });
+
+  if (!res.ok) {
+    if (res.status === 404) notFound();
+    return <div className="p-8 text-center text-rose-500">Error loading lead</div>;
+  }
+
+  const lead = await res.json();
 
   if (!lead) {
     notFound();

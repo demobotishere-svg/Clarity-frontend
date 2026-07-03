@@ -21,9 +21,11 @@ export default function ForgotPassword() {
     setSuccess("");
 
     try {
-      const res = await fetch("/api/auth/reset-password", {
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || (typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:3001` : "http://localhost:3001");
+      const res = await fetch(`${backendUrl}/api/auth/reset-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ email, newPassword, inviteKey }),
       });
 
@@ -148,3 +150,4 @@ export default function ForgotPassword() {
     </div>
   );
 }
+

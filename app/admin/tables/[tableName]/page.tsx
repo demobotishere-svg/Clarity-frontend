@@ -1,10 +1,7 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { db } from "@/lib/db";
-import { leads, assessments, messages as messagesTable, activityLogs, razorpayPayments, admins } from "@/db/schema";
 import ExportButton from "../../ExportButton";
-import { sql } from "drizzle-orm";
 import ClientTableViewer from "./ClientTableViewer";
+import { cookies } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
@@ -19,59 +16,37 @@ export default async function TableViewerPage({
   const resolvedSearchParams = await searchParams;
   const { tableName } = resolvedParams;
 
-  const page = typeof resolvedSearchParams.page === "string" ? parseInt(resolvedSearchParams.page, 10) : 1;
-  const take = 100;
-  const skip = (Math.max(1, page) - 1) * take;
+  const page = typeof resolvedSearchParams.page === "string" ? resolvedSearchParams.page : "1";
 
-  let data: any[] = [];
-  let title = "";
-  let totalCount = 0;
+  const cookieStore = await cookies();
+  const token = cookieStore.get("admin_token")?.value;
 
-  // Dynamic switch based on the table name
-  switch (tableName.toLowerCase()) {
-    case "leads":
-      totalCount = (await db.select({ count: sql<number>`cast(count(${leads.id}) as int)` }).from(leads))[0].count;
-      data = await db.query.leads.findMany({ limit: take, offset: skip, orderBy: (table, { desc }) => [desc(table.createdAt)] });
-      title = "Lead Table";
-      break;
-    case "admins":
-      totalCount = (await db.select({ count: sql<number>`cast(count(${admins.id}) as int)` }).from(admins))[0].count;
-      data = await db.query.admins.findMany({ limit: take, offset: skip, orderBy: (table, { desc }) => [desc(table.createdAt)] });
-      
-      // Sanitize passwordHash from output
-      data = data.map(admin => {
-        const { passwordHash, ...safeAdmin } = admin;
-        return safeAdmin;
-      });
-      
-      title = "Admins Table";
-      break;
-    case "assessments":
-      totalCount = (await db.select({ count: sql<number>`cast(count(${assessments.id}) as int)` }).from(assessments))[0].count;
-      data = await db.query.assessments.findMany({ limit: take, offset: skip, orderBy: (table, { desc }) => [desc(table.createdAt)] });
-      title = "Assessment Table";
-      break;
-    case "messages":
-      totalCount = (await db.select({ count: sql<number>`cast(count(${messagesTable.id}) as int)` }).from(messagesTable))[0].count;
-      data = await db.query.messages.findMany({ limit: take, offset: skip, orderBy: (table, { desc }) => [desc(table.createdAt)] });
-      title = "Message Table";
-      break;
-    case "activitylogs":
-      totalCount = (await db.select({ count: sql<number>`cast(count(${activityLogs.id}) as int)` }).from(activityLogs))[0].count;
-      data = await db.query.activityLogs.findMany({ limit: take, offset: skip, orderBy: (table, { desc }) => [desc(table.createdAt)] });
-      title = "ActivityLog Table";
-      break;
-    case "razorpaypayments":
-      totalCount = (await db.select({ count: sql<number>`cast(count(${razorpayPayments.id}) as int)` }).from(razorpayPayments))[0].count;
-      data = await db.query.razorpayPayments.findMany({ limit: take, offset: skip, orderBy: (table, { desc }) => [desc(table.createdAt)] });
-      title = "Razorpay Payments Table";
-      break;
-    default:
-      notFound();
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
+  
+  const res = await fetch(`${backendUrl}/api/admin/tables/${tableName}?page=${page}`, {
+    headers: {
+      Cookie: token ? `admin_token=${token}` : ""
+    },
+    cache: "no-store"
+  });
+
+  if (res.status === 404) {
+    notFound();
   }
 
-  const totalPages = Math.max(1, Math.ceil(totalCount / take));
+  if (!res.ok) {
+    return (
+      <div className="p-8 text-center text-red-500">
+        Failed to fetch table data. Make sure the backend is running.
+        <br />Error: {await res.text()}
+      </div>
+    );
+  }
+
+  const { data, totalCount, totalPages } = await res.json();
   const columns = data.length > 0 ? Object.keys(data[0]) : [];
+  
+  let title = tableName.charAt(0).toUpperCase() + tableName.slice(1) + " Table";
 
   return (
     <div className="max-w-7xl mx-auto space-y-6 pb-20">
@@ -87,17 +62,9 @@ export default async function TableViewerPage({
         data={JSON.parse(JSON.stringify(data))}
         columns={columns}
         totalCount={totalCount}
-        page={page}
+        page={parseInt(page, 10)}
         totalPages={totalPages}
       />
     </div>
   );
-}
-
-function formatValue(val: any): string {
-  if (val === null || val === undefined) return "null";
-  if (typeof val === "boolean") return val ? "true" : "false";
-  if (val instanceof Date) return val.toISOString();
-  if (typeof val === "object") return JSON.stringify(val);
-  return String(val);
 }

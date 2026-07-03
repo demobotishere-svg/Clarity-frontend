@@ -10,7 +10,8 @@ export default function AdminSidebar() {
   const router = useRouter();
 
   const handleLogout = async () => {
-    await fetch('/api/auth/logout', { method: 'POST' });
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || (typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:3001` : "http://localhost:3001");
+    await fetch(`${backendUrl}/api/auth/logout`, { method: 'POST', credentials: 'include' });
     router.push('/auth/login');
   };
 
@@ -105,3 +106,4 @@ export default function AdminSidebar() {
     </>
   );
 }
+

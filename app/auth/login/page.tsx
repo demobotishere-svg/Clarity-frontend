@@ -17,9 +17,11 @@ export default function AdminLogin() {
     setError("");
 
     try {
-      const res = await fetch("/api/auth/login", {
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || (typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:3001` : "http://localhost:3001");
+      const res = await fetch(`${backendUrl}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ email, password }),
       });
 
@@ -128,3 +130,4 @@ export default function AdminLogin() {
     </div>
   );
 }
+

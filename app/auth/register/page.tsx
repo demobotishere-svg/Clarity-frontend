@@ -22,9 +22,11 @@ export default function AdminRegister() {
     setSuccess("");
 
     try {
-      const res = await fetch("/api/auth/register", {
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || (typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:3001` : "http://localhost:3001");
+      const res = await fetch(`${backendUrl}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ email, phone, password, inviteKey }),
       });
 
@@ -161,3 +163,4 @@ export default function AdminRegister() {
     </div>
   );
 }
+

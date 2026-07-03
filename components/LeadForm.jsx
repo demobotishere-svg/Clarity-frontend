@@ -50,7 +50,8 @@ export default function LeadForm({
     setSubmitting(true);
     
     try {
-      const res = await fetch("/api/leads", {
+      const backendUrl = typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:3001` : "http://localhost:3001";
+      const res = await fetch(`${backendUrl}/api/leads`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, phone: whatsapp }),

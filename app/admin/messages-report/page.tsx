@@ -1,14 +1,26 @@
-import { db } from "@/lib/db";
-import { bulkBatches } from "@/db/schema";
-import { desc } from "drizzle-orm";
+import { cookies } from "next/headers";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
 export default async function MessagesReportPage() {
-  const batches = await db.select()
-    .from(bulkBatches)
-    .orderBy(desc(bulkBatches.createdAt));
+  const cookieStore = await cookies();
+  const token = cookieStore.get("admin_token")?.value;
+
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
+  
+  const res = await fetch(`${backendUrl}/api/bulk/reports`, {
+    headers: {
+      Cookie: `admin_token=${token}`
+    },
+    cache: "no-store"
+  });
+
+  if (!res.ok) {
+    return <div className="p-8 text-center text-rose-500">Error loading reports</div>;
+  }
+
+  const batches = await res.json();
 
   const formatDate = (dateString: Date) => {
     return new Intl.DateTimeFormat('en-US', {
