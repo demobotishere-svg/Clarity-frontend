@@ -231,7 +231,7 @@ const CASE_STUDIES = [
     metric: "Built from scratch by a 9th grader.",
     quote: "Seedora: A plant growing community app which encourages students to grow plants and monitor their growth. Built from scratch.",
     graphic: <SeedoraMockup />,
-    image: "/face_1.png"
+    image: "/testimonial_1.jpeg"
   },
   {
     role: "Marketing Executive",
@@ -241,7 +241,7 @@ const CASE_STUDIES = [
     metric: "Zero traditional tech background.",
     quote: "Ipposales: A chatbot built entirely without any traditional tech background.",
     graphic: <IpposalesMockup />,
-    image: "/face_2.png"
+    image: "/testimonial_2.jpeg"
   },
   {
     role: "HR Manager",
@@ -251,7 +251,7 @@ const CASE_STUDIES = [
     metric: "Built over a single weekend.",
     quote: "Automated a complete employee onboarding portal integrating 4 different HR tools. Built over a weekend with zero coding experience.",
     graphic: <HRMockup />,
-    image: "/face_3.png"
+    image: "/testimonial_3.jpeg"
   },
   {
     role: "Local Gym Owner",
@@ -261,7 +261,7 @@ const CASE_STUDIES = [
     metric: "Handles 100% of Instagram DMs.",
     quote: "Custom lead generation agent that handles Instagram DMs, qualifies leads, and books gym trials. I don't know what an API is.",
     graphic: <GymMockup />,
-    image: "/face_4.png"
+    image: "/testimonial_4.jpeg"
   },
   {
     role: "Finance Director",
@@ -271,7 +271,7 @@ const CASE_STUDIES = [
     metric: "Eliminated 20 hours of manual data entry.",
     quote: "Built an automated invoicing system that reads our CRM and generates Stripe invoices automatically. I literally didn't write a single line of code.",
     graphic: <FinanceMockup />,
-    image: "/face_5.png"
+    image: "/testimonial_5.jpeg"
   },
   {
     role: "Content Creator",
@@ -281,7 +281,7 @@ const CASE_STUDIES = [
     metric: "4x increase in weekly publishing output.",
     quote: "My entire content pipeline from ideation to drafting to scheduling across 4 platforms is now handled by my custom agent. Unbelievable.",
     graphic: <ContentMockup />,
-    image: "/face_6.png"
+    image: "/testimonial_6.jpeg"
   }
 ];
 
