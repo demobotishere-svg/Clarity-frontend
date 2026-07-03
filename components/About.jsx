@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -29,10 +30,12 @@ export default function About() {
             className="lg:col-span-5"
           >
             <div className="relative rounded-3xl overflow-hidden bg-[#EAEAE6] aspect-[4/5] border border-[#DCDCCF]">
-              <img
+              <Image
                 src="/yogesh-instructor.jpeg"
                 alt="Yogesh Parthasarathy"
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1916]/40 via-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6 text-[#FAF8F3]">

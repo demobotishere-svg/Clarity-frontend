@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function LeaderQuotes() {
   return (
@@ -70,10 +71,12 @@ export default function LeaderQuotes() {
               <div className="absolute inset-y-0 left-0 w-[55%] sm:w-[45%] pointer-events-none" aria-hidden="true">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#1A1916] z-10" />
                 <div className="absolute inset-0 bg-gradient-to-b from-[#1A1916]/30 via-transparent to-[#1A1916]/80 z-10" />
-                <img 
+                <Image 
                   src={leader.image} 
                   alt="" 
-                  className="w-full h-full object-cover object-top opacity-100"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover object-top opacity-100"
                 />
               </div>
 

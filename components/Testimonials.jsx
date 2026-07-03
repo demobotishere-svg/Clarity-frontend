@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 // Fake avatar placeholders using UI Faces or similar highly realistic AI faces
 // For now, using standard Unsplash realistic portraits to avoid broken links
@@ -473,9 +474,11 @@ export default function Testimonials() {
                 </p>
 
                 <div className="flex items-center gap-3 mt-auto pt-4 border-t border-black/5">
-                  <img 
+                  <Image 
                     src={study.image} 
                     alt={study.name} 
+                    width={48}
+                    height={48}
                     className="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full object-cover shadow-sm group-hover:scale-105 transition-transform duration-500 bg-gray-200"
                   />
                   <div className="min-w-0">
