@@ -58,7 +58,7 @@ function CertificateMockup() {
                   <path d="M19 8a7 7 0 0 0-14 0c0 4.42 3.13 8 7 8s7-3.58 7-8z"/>
                   <path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/>
                </svg>
-               <h3 className="text-[4.5cqi] font-serif font-bold text-[#2C303A] tracking-[0.1em] uppercase text-center w-full leading-tight">
+               <h3 className="text-[4.5cqi] font-serif text-[#2C303A] tracking-[0.1em] uppercase text-center w-full leading-tight">
                  Certificate of Completion
                </h3>
              </div>
@@ -66,7 +66,7 @@ function CertificateMockup() {
             {/* Body */}
             <div className="flex flex-col items-center mt-[4cqi] w-full">
                <p className="text-[1.5cqi] text-[#2C303A]/60 mb-[2cqi] tracking-[0.2em] uppercase text-center">This certificate is proudly presented to</p>
-               <h2 className="text-[7cqi] font-serif font-bold text-[#2C303A] mb-[2cqi] tracking-wide uppercase text-center w-full leading-none">
+               <h2 className="text-[7cqi] font-serif text-[#2C303A] mb-[2cqi] tracking-wide uppercase text-center w-full leading-none">
                   Ashok Sai
                </h2>
                <p className="text-[1.6cqi] text-[#2C303A]/60 leading-relaxed max-w-[85%] text-center px-[2cqi] font-medium">
