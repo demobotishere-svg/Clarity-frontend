@@ -480,7 +480,7 @@ export default function Testimonials() {
                       alt={study.name} 
                       fill
                       sizes="(max-width: 768px) 40px, 48px"
-                      className="object-cover scale-[1.35] group-hover:scale-[1.45] transition-transform duration-500 bg-gray-200"
+                      className="object-cover object-[50%_15%] scale-[1.2] group-hover:scale-[1.25] transition-transform duration-500 bg-gray-200"
                     />
                   </div>
                   <div className="min-w-0">
